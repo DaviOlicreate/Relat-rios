@@ -32,6 +32,7 @@ Use somente estas contas. Se eu pedir um relatório de um cliente fora desta lis
 | Ivi Interiores | 484404834087570 |
 | Stylus Concept | 1667130234603449 |
 | CA – La Onda Moda Playa | 840274048399377 |
+| CA01 – Thabata Montanari | 1149413875505297 |
 
 ---
 
