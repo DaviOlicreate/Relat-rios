@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Concorrência — Grupo Caboscar</title>
+<style>
+  :root{
+    --bg:#f4f6fb;
+    --card-bg:#ffffff;
+    --ink:#151a2d;
+    --ink-soft:#5b6478;
+    --brand:#4338ca;
+    --brand-soft:#eef0fd;
+    --brand-dark:#312e81;
+    --accent:#0ea5a4;
+    --accent-soft:#e6fbfa;
+    --warn:#b45309;
+    --warn-soft:#fef3e2;
+    --danger:#b91c1c;
+    --danger-soft:#fdeceb;
+    --border:#e6e8f0;
+    --shadow:0 4px 18px rgba(20,20,50,0.06);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    padding:0 0 60px 0;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+
+  header.hero{
+    background:linear-gradient(135deg,var(--brand-dark),var(--brand) 60%,#6d28d9);
+    color:#fff;
+    padding:44px 20px 60px;
+  }
+  header.hero .wrap{max-width:960px;}
+  header.hero .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:12px;
+    opacity:.85;
+    font-weight:600;
+  }
+  header.hero h1{
+    margin:10px 0 6px;
+    font-size:clamp(24px,4vw,34px);
+    font-weight:800;
+  }
+  header.hero p.sub{margin:0;opacity:.9;font-size:15px;max-width:620px;}
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
+  .meta-pill{
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:999px;
+    padding:7px 14px;
+    font-size:13px;
+    font-weight:600;
+  }
+
+  .summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:14px;
+    margin-top:-38px;
+    margin-bottom:34px;
+  }
+  .stat-card{
+    background:var(--card-bg);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:18px 20px;
+    border:1px solid var(--border);
+  }
+  .stat-card .label{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+  .stat-card .value{font-size:22px;font-weight:800;margin-top:6px;color:var(--brand-dark);}
+  .stat-card .hint{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+
+  section{margin:38px 0;}
+  .section-title{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .section-title h2{
+    font-size:20px;
+    margin:0;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .section-title .count{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  .alert{
+    border-radius:var(--radius);
+    padding:16px 18px;
+    border:1px solid #f3d3ae;
+    background:var(--warn-soft);
+    color:#7c3a06;
+    font-size:14px;
+    margin-bottom:24px;
+  }
+  .alert strong{display:block;margin-bottom:4px;font-size:14px;}
+
+  .client-card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:26px 26px 22px;
+    margin-bottom:26px;
+  }
+  .client-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:16px;
+    align-items:flex-start;
+    border-bottom:1px solid var(--border);
+    padding-bottom:16px;
+    margin-bottom:18px;
+  }
+  .client-head h3{
+    margin:0 0 4px 0;
+    font-size:19px;
+    font-weight:800;
+  }
+  .client-head .niche{
+    font-size:13px;
+    color:var(--brand-dark);
+    font-weight:700;
+    background:var(--brand-soft);
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-top:6px;
+  }
+
+  .tag{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:999px;
+    margin:2px 4px 2px 0;
+    white-space:nowrap;
+  }
+  .tag-blue{background:var(--brand-soft);color:var(--brand-dark);}
+  .tag-teal{background:var(--accent-soft);color:#0b6b6a;}
+  .tag-amber{background:var(--warn-soft);color:var(--warn);}
+  .tag-gray{background:#f1f2f7;color:#444a5e;}
+
+  h4.block-title{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+    margin:22px 0 10px;
+    font-weight:800;
+  }
+
+  table.comp-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  table.comp-table th{
+    text-align:left;
+    background:#f8f9fd;
+    color:var(--ink-soft);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    padding:10px 12px;
+    border-bottom:2px solid var(--border);
+  }
+  table.comp-table td{
+    padding:11px 12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  table.comp-table tr:last-child td{border-bottom:none;}
+  table.comp-table td.name{font-weight:700;color:var(--ink);}
+
+  .angle-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin-top:4px;
+  }
+  .angle-card{
+    background:#f8f9fd;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:13px;
+    color:var(--ink);
+  }
+  .angle-card .angle-label{font-weight:800;font-size:12px;color:var(--brand-dark);margin-bottom:4px;display:block;}
+
+  .note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed var(--border);
+  }
+
+  .opportunity{
+    background:var(--accent-soft);
+    border:1px solid #b7ebe9;
+    border-radius:var(--radius);
+    padding:18px 20px;
+    color:#0b4f4e;
+    font-size:14px;
+  }
+  .opportunity strong{display:block;margin-bottom:4px;color:#0b6b6a;}
+
+  footer{
+    max-width:960px;
+    margin:40px auto 0;
+    padding:0 20px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  footer .foot-card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px 20px;
+  }
+
+  @media (max-width:640px){
+    .client-head{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Legado Digital · Inteligência de Concorrência</div>
+    <h1>Relatório de Concorrência — Grupo Caboscar</h1>
+    <p class="sub">Mapeamento de concorrentes diretos na Biblioteca de Anúncios do Meta para a conta Caboscar 2025, cliente fora do portfólio padrão, consultado sob demanda.</p>
+    <div class="meta-row">
+      <span class="meta-pill">🗓️ Gerado em 24/09/2026</span>
+      <span class="meta-pill">🏢 Ad Account: 29047658991547145</span>
+      <span class="meta-pill">📍 Belo Horizonte/MG</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="summary-grid">
+    <div class="stat-card">
+      <div class="label">Status da conta</div>
+      <div class="value" style="color:var(--warn);">Sem veiculação</div>
+      <div class="hint">Campanhas pausadas, R$0 em 30 dias</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Página no Meta</div>
+      <div class="value" style="font-size:16px;">Grupo Caboscar</div>
+      <div class="hint">+ página vinculada "Space Sistemas"</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Concorrentes diretos mapeados</div>
+      <div class="value">3</div>
+      <div class="hint">Anúncios ativos no nicho (BR)</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Nicho</div>
+      <div class="value" style="font-size:16px;">Cabos de aço / Içamento</div>
+      <div class="hint">Metal-mecânica industrial B2B</div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <strong>⚠️ Conta sem veiculação ativa</strong>
+    As duas campanhas encontradas na conta ("[Legado] - Mensagens" e "[LEGADO] - Leads LP") estão com status <strong>PAUSED</strong> e não registraram gasto ou impressões nos últimos 30 dias. A página "Grupo Caboscar" também não tem nenhum anúncio — ativo ou histórico — na Biblioteca de Anúncios. Os dados abaixo refletem apenas a concorrência de mercado, sem comparativo de performance própria.
+  </div>
+
+  <section>
+    <div class="section-title"><h2>🔩 Grupo Caboscar</h2><span class="count">act_29047658991547145 · Cabos de aço, cordoalhas, superlaços e acessórios de içamento</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Fabricante/distribuidor de cabos de aço e acessórios de içamento de cargas</h3>
+          <span class="niche">Nicho: Metal-mecânica / Equipamentos industriais (B2B)</span>
+        </div>
+      </div>
+
+      <h4 class="block-title">Concorrentes diretos identificados na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Sinal</th><th>Ângulo de venda / CTA</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="name">Acro Cabos de Aço</td>
+            <td><span class="tag tag-blue">Ativo</span></td>
+            <td>Ângulo de segurança/procedência: <em>"Não coloque sua operação e sua equipe em risco com cabos de aço sem procedência!"</em></td>
+          </tr>
+          <tr>
+            <td class="name">C3 Equipamentos</td>
+            <td><span class="tag tag-blue">Ativo</span></td>
+            <td>Anúncio institucional de marca, sem oferta ou gatilho explícito no título</td>
+          </tr>
+          <tr>
+            <td class="name">Rafael Oliveira <span class="tag tag-gray" style="margin-left:6px;">representante/revenda</span></td>
+            <td><span class="tag tag-blue">Ativo</span></td>
+            <td>Mesmo ângulo de segurança/procedência do Acro — possível rede de distribuidor ou representante comercial</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânica de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Segurança / procedência</span>Ângulo dominante: risco à operação e à equipe por usar cabo sem procedência certificada — apela para responsabilidade técnica/legal do comprador.</div>
+        <div class="angle-card"><span class="angle-label">Institucional</span>Parte dos concorrentes ainda usa anúncio de marca simples, sem oferta clara — sinal de nicho pouco maduro em performance.</div>
+        <div class="angle-card"><span class="angle-label">Ausência de preço/desconto</span>Nenhum concorrente mapeado usa gatilho de preço ou promoção — venda B2B técnica, decisão via relacionamento/confiança.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-teal">Fale conosco / Solicite orçamento</span>
+      <span class="tag tag-gray">Saiba mais</span>
+
+      <div class="opportunity">
+        <strong>💡 Oportunidade identificada</strong>
+        O volume pago do nicho é praticamente inexistente no Meta: apenas 3 anúncios ativos no Brasil para "cabos de aço içamento cargas" e zero resultados para termos técnicos mais específicos (cordoalha, superlaço, eslinga, cintas de elevação). Isso sugere que a concorrência disputa esse mercado majoritariamente fora do Meta Ads (SEO, indicação, venda direta B2B). Como a Caboscar está sem veiculação, ela não está competindo nem por esse espaço reduzido — reativar a conta com o ângulo de segurança/procedência (já validado pelos concorrentes) tende a ter custo de aquisição baixo por falta de disputa direta.
+      </div>
+
+      <div class="note">Cliente fora do portfólio padrão da Legado Digital — dados coletados sob demanda em 24/09/2026. Recomenda-se formalizar o cadastro da conta caso o atendimento a este cliente continue.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-card">
+      <strong>Fonte dos dados:</strong> Meta Ads (conector MCP) para status da conta Caboscar 2025; Meta Ad Library (Biblioteca de Anúncios) para o mapeamento de concorrentes, criativos e CTAs. O número de "anúncios ativos no nicho" reflete o <em>estimated_total_count</em> retornado pela Ad Library para os termos de busca usados e serve como indicador de saturação, não como contagem exata de concorrentes diretos.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
