@@ -1,11 +1,16 @@
 # Supermercado São Luiz — Relatório de Públicos (últimos 30 dias)
 Conta: 254866402925450 | Gerado em 2026-09-28
 
-Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp (3 campanhas, 452 mensagens, R$ 1.729,51, custo médio R$ 3,83). Apoio: visitas ao perfil (4.297, R$ 490,93), visualizações da página do app (877, R$ 246,78) e alcance institucional (36.099 pessoas, R$ 168,78). Indicadores diferentes não foram somados.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
+
+📊 Visão Geral
+━━━━━━━━━━━━━
+- Investimento total de R$ 2.635,99 no período.
+- As campanhas de WhatsApp geraram 452 conversas a R$ 3,83 cada.
+- Também tivemos 4.297 visitas ao perfil do Instagram e 877 visitas na página do app.
 
 👥 Perfil Demográfico
 ━━━━━━━━━━━━━
@@ -35,7 +40,15 @@ Faixa Etária Principal
 - Fora das conversas, o tráfego para o Instagram fez 4.297 visitas ao perfil a R$ 0,11 cada e a campanha do app "meu queridinho" trouxe 877 visualizações da página a R$ 0,28.
 - Pior conjunto do mês: o público aberto da reativação do clube em todas as lojas fez só 29 conversas a R$ 6,88 (R$ 199,47), mais que o dobro do público semelhante da mesma campanha. O caminho é concentrar essa verba no público semelhante.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp (3 campanhas, 452 mensagens, R$ 1.729,51, custo médio R$ 3,83). Apoio: visitas ao perfil (4.297, R$ 490,93), visualizações da página do app (877, R$ 246,78) e alcance institucional (36.099 pessoas, R$ 168,78). Indicadores diferentes não foram somados.
+
 
 - Validação: soma por gênero (348+101+3) e por idade (34+93+106+115+70+34) e por plataforma (113+322+17) fecha em 452 conversas; investimento por breakdown fecha em R$ 1.729,51 nas 3 campanhas de mensagens. Investimento total da conta por gênero: R$ 2.635,99 (1.945,42 + 675,66 + 14,92 sem gênero identificado). Alcance por breakdown não é somável (pessoas se repetem entre segmentos).
 - A diferença de custo entre o campeão de custo (R$ 3,04, 82 conversas) e o campeão de volume (R$ 3,16) é menor que 15%: leitura direcional, não conclusiva. A frase do relatório trata os dois como equivalentes em custo.
