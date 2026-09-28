@@ -3,12 +3,12 @@
 Cada pasta corresponde a uma **rotina agendada** do Claude (mesmo nome da rotina).
 Dentro dela, uma pasta por **data de envio** (`AAAA-MM-DD`) e um arquivo por **cliente**.
 
-| Pasta | Rotina | Quando roda |
+| Pasta | Rotina | Quando roda (3h–4h30 da manhã) |
 |---|---|---|
-| `1-relatorio-de-criativos/` | Relatório de criativos | seg, ter, qui, sex |
-| `2-relatorio-de-publicos/` | Relatório de públicos | seg, ter, qui, sex |
-| `3-relatorio-semanal-de-metricas/` | Relatório semanal de métricas 2.0 | seg, ter, qui, sex |
-| `4-relatorio-de-concorrencia/` | Relatório Mensal de Concorrência | dia 20 de cada mês |
+| `1-relatorio-de-criativos/` | Relatório de criativos | 2ª e 4ª segunda-feira do mês |
+| `2-relatorio-de-publicos/` | Relatório de públicos (todos os clientes) | última segunda-feira do mês |
+| `3-relatorio-de-meados-do-mes/` | Relatório de meados do mês (métricas) | 3ª segunda-feira do mês |
+| `4-acoes-comerciais-e-concorrentes/` | Ações comerciais e concorrentes | 3ª quinta-feira do mês |
 | `5-linktree/` | Modelo e instruções do Gem de Linktree | — |
 | `6-relatorios-avulsos/` | Relatórios pedidos manualmente | — |
 
