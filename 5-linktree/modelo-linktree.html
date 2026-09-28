@@ -1,0 +1,515 @@
+<!--
+  ============================================================
+  MODELO REPLICÁVEL — LINKTREE V2 | LEGADO DIGITAL
+  ============================================================
+  Este arquivo é a REFERÊNCIA ESTRUTURAL para o Gem gerar a página
+  de link-na-bio de QUALQUER cliente novo. Ele nasceu do Linktree
+  feito para a Dra. Cristiane Gomes (fisioterapia), mas todo dado
+  pessoal/de negócio foi trocado por placeholders {{ASSIM}}.
+
+  O QUE NUNCA MUDA (arquitetura — preserve sempre):
+  - Estrutura de seções, nesta ordem: Perfil > Redes > Quiz >
+    Carrossel de áreas > Cartões largos > CTAs de WhatsApp >
+    Instagram > Rodapé.
+  - Classes CSS: .cartao, .capa, .trilho, .escuro, .glow, #quiz-painel,
+    a animação .up com delay escalonado (--d), e a media query
+    prefers-reduced-motion.
+  - Container mobile-first, max-width ~430px.
+  - Padrão de JS: gerador de link do WhatsApp (data-whatsapp +
+    data-area/data-message), motor de quiz em árvore (array
+    PERGUNTAS + objeto RESULTADOS), loader de Instagram com
+    IntersectionObserver (lazy).
+
+  O QUE MUDA A CADA CLIENTE:
+  - Paleta de cores em tailwind.config (bloco colors).
+  - Fontes, se o cliente pedir outra combinação.
+  - Todo conteúdo marcado com {{PLACEHOLDER}}.
+  - Quantidade de seções: remova (não deixe vazia/"em breve") o
+    que não existir pro cliente — ex.: sem quiz, sem certificação,
+    sem atendimento físico, sem Instagram com posts reais.
+
+  REGRA DE OURO: nunca invente WhatsApp, endereço, e-mail, @ do
+  Instagram, número de registro profissional, link de avaliação
+  ou posts do Instagram. Se faltar, deixe o comentário
+  <!-- FALTA: ... --> no lugar em vez de inventar.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="{{COR_THEME_HEX}}" />
+
+  <title>{{NOME_CLIENTE}} — Links</title>
+  <meta name="description" content="{{META_DESCRICAO}}" />
+  <link rel="icon" href="{{FAVICON_URL}}" type="image/png" />
+  <link rel="apple-touch-icon" href="{{FAVICON_URL}}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Combinação padrão: serifada de destaque (títulos) + sans neutra (corpo). Troque só se o cliente pedir. -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          /* PALETA — troque as 5 famílias abaixo pela paleta do cliente.
+             Mantenha os mesmos NOMES de família (brand/neutro/acento/whats)
+             pra não quebrar as classes usadas no resto do arquivo. Se o
+             cliente não definir paleta, sugira 2-3 opções pelo nicho antes
+             de gerar (ex.: pastéis p/ estética, tons sóbrios p/ B2B). */
+          blush:{50:'{{BRAND_50}}',100:'{{BRAND_100}}',200:'{{BRAND_200}}',300:'{{BRAND_300}}',400:'{{BRAND_400}}',500:'{{BRAND_500}}',600:'{{BRAND_600}}',700:'{{BRAND_700}}',800:'{{BRAND_800}}'},
+          graphite:{500:'#64748b',600:'#4a5568',700:'#3b465a',800:'#2d3748',900:'#1a202c'},
+          gold:{300:'{{ACENTO_300}}',400:'{{ACENTO_400}}',500:'{{ACENTO_500}}'},
+          whats:{DEFAULT:'#25D366',soft:'#dff3e4',deep:'#128C7E'},
+        },
+        fontFamily:{ serif:['"Playfair Display"','Georgia','serif'], sans:['Montserrat','system-ui','sans-serif'] },
+      }},
+    };
+  </script>
+
+  <style>
+    :root { color-scheme: light; }
+    body { background-color: {{BRAND_100}}; }
+    ::selection { background: {{BRAND_200}}; color: #1a202c; }
+
+    .glow { position: fixed; inset-inline: 0; height: 620px; pointer-events: none; z-index: -1; }
+    .glow--topo { top: -160px; background: radial-gradient(60% 60% at 50% 40%, rgba(230,213,213,.85), rgba(248,241,241,0)); }
+    .glow--base { bottom: -200px; background: radial-gradient(60% 60% at 50% 60%, rgba(224,203,168,.3), rgba(248,241,241,0)); }
+
+    /* entrada escalonada */
+    .up { opacity: 0; transform: translateY(16px); }
+    .js .up { animation: up .65s cubic-bezier(.16,1,.3,1) forwards; animation-delay: var(--d,0ms); }
+    @keyframes up { to { opacity:1; transform:none } }
+
+    /* carrossel horizontal com snap */
+    .trilho {
+      display: flex; gap: .85rem; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding: .25rem .25rem 1rem; margin-inline: -.25rem;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .trilho::-webkit-scrollbar { display: none; }
+    .trilho > * { scroll-snap-align: start; flex: 0 0 46%; min-width: 158px; }
+
+    /* capas das áreas: foto + véu para o título ficar legível */
+    .capa {
+      position: relative; aspect-ratio: 1/1; border-radius: 1rem; overflow: hidden;
+      display: flex; align-items: flex-end; padding: .95rem;
+      background: linear-gradient(155deg, {{BRAND_200}}, {{BRAND_600}});
+    }
+    /* sem transform na <img>: promovê-la a camada própria quebra a composição em alguns navegadores */
+    .capa img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .capa::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(38,29,29,.88) 0%, rgba(38,29,29,.55) 38%, rgba(38,29,29,.12) 78%, rgba(38,29,29,.02) 100%);
+    }
+    .capa h3 { text-shadow: 0 2px 12px rgba(28,20,20,.55); }
+
+    .cartao {
+      background: rgba(255,255,255,.78); border: 1px solid {{BRAND_200}}; border-radius: 1.15rem;
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px -18px rgba(109,76,76,.45);
+      transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s, border-color .4s;
+    }
+    a.cartao:hover, button.cartao:hover, a.cartao:focus-visible, button.cartao:focus-visible {
+      transform: translateY(-3px); border-color: {{BRAND_300}}; box-shadow: 0 20px 40px -20px rgba(109,76,76,.5);
+    }
+
+    .escuro { background: linear-gradient(140deg, {{BRAND_800}} 0%, #3b465a 60%, #1a202c 100%); }
+
+    /* quiz */
+    #quiz-painel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s cubic-bezier(.16,1,.3,1); }
+    #quiz-painel > div { overflow: hidden; }
+    #quiz-painel.aberto { grid-template-rows: 1fr; }
+    .quiz-op { transition: transform .25s, background .25s, border-color .25s; }
+    .quiz-op:hover { transform: translateX(3px); background: #fff; border-color: {{BRAND_300}}; }
+    .ponto { transition: background .3s, width .3s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .up { animation: none; opacity: 1; transform: none; }
+      .cartao, .quiz-op, #quiz-painel { transition: none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body class="min-h-screen bg-blush-100 px-5 py-10 font-sans text-graphite-800 antialiased">
+  <div class="glow glow--topo" aria-hidden="true"></div>
+  <div class="glow glow--base" aria-hidden="true"></div>
+
+  <main class="mx-auto flex w-full max-w-[430px] flex-col">
+
+    <!-- ================= PERFIL ================= -->
+    <header class="up flex flex-col items-center text-center" style="--d:0ms">
+      <div class="h-24 w-24 overflow-hidden rounded-full bg-white p-[3px] shadow-[0_10px_30px_-12px_rgba(109,76,76,.5)] ring-1 ring-blush-300">
+        <img src="{{FOTO_PERFIL_URL}}" alt="{{NOME_CLIENTE}}" class="h-full w-full rounded-full object-cover" width="640" height="640" />
+      </div>
+      <h1 class="mt-4 font-serif text-2xl leading-tight text-graphite-900">{{NOME_CLIENTE}}</h1>
+      <p class="mt-2 max-w-[19rem] text-sm leading-relaxed text-graphite-600">
+        {{FRASE_DE_EFEITO}}
+      </p>
+    </header>
+
+    <!-- ================= REDES =================
+         Inclua só os ícones dos canais que o cliente de fato tiver.
+         Remova o <a> inteiro do canal que não existir (não deixe href="#"). -->
+    <nav class="up mt-6 flex items-start justify-center gap-1" style="--d:70ms" aria-label="Redes">
+      <a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="group flex w-[62px] flex-col items-center gap-1.5">
+        <span class="cartao flex h-12 w-12 items-center justify-center rounded-full text-blush-700 transition group-hover:-translate-y-0.5"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 1.98c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07Zm0 3.37a4.49 4.49 0 1 1 0 8.98 4.49 4.49 0 0 1 0-8.98Zm0 7.4a2.91 2.91 0 1 0 0-5.82 2.91 2.91 0 0 0 0 5.82Zm5.72-7.6a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Z"/></svg></span>
+        <span class="text-[10px] font-medium leading-none text-graphite-600">Instagram</span>
+      </a>
+      <a href="#" data-whatsapp aria-label="WhatsApp" class="group flex w-[62px] flex-col items-center gap-1.5">
+        <span class="cartao flex h-12 w-12 items-center justify-center rounded-full text-blush-700 transition group-hover:-translate-y-0.5"><svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.25.69-1.44 1.32-2 1.4-.51.08-1.15.11-1.86-.12-.43-.13-.98-.31-1.69-.62-2.98-1.29-4.92-4.29-5.07-4.49-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg></span>
+        <span class="text-[10px] font-medium leading-none text-graphite-600">WhatsApp</span>
+      </a>
+      <a href="{{GOOGLE_REVIEW_URL}}" target="_blank" rel="noopener noreferrer" aria-label="Avaliar no Google" class="group flex w-[62px] flex-col items-center gap-1.5">
+        <span class="cartao flex h-12 w-12 items-center justify-center rounded-full text-blush-700 transition group-hover:-translate-y-0.5"><svg class="h-5 w-5" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>
+        <span class="text-[10px] font-medium leading-none text-graphite-600">Avaliar</span>
+      </a>
+      <a href="{{SITE_URL}}" aria-label="Site oficial" class="group flex w-[62px] flex-col items-center gap-1.5">
+        <span class="cartao flex h-12 w-12 items-center justify-center rounded-full text-blush-700 transition group-hover:-translate-y-0.5"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3 7.5 7.03 7.5 12s2.015 9 4.5 9ZM3.6 9h16.8M3.6 15h16.8"/></svg></span>
+        <span class="text-[10px] font-medium leading-none text-graphite-600">Site</span>
+      </a>
+      <a href="mailto:{{EMAIL}}" aria-label="E-mail" class="group flex w-[62px] flex-col items-center gap-1.5">
+        <span class="cartao flex h-12 w-12 items-center justify-center rounded-full text-blush-700 transition group-hover:-translate-y-0.5"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg></span>
+        <span class="text-[10px] font-medium leading-none text-graphite-600">E-mail</span>
+      </a>
+    </nav>
+
+    <!-- ================= QUIZ =================
+         Seção OPCIONAL: só inclua se o cliente tiver mais de um
+         serviço/área que valha a pena qualificar o lead antes do
+         WhatsApp. Se o negócio for de serviço único, remova a
+         seção inteira em vez de forçar um quiz artificial. -->
+    <section class="up mt-7" style="--d:140ms">
+      <button type="button" id="quiz-abrir"
+              class="escuro group flex w-full items-center gap-4 rounded-[1.3rem] p-5 text-left text-white shadow-[0_18px_40px_-18px_rgba(61,44,44,.75)] transition hover:-translate-y-0.5"
+              aria-expanded="false" aria-controls="quiz-painel">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/></svg>
+        </span>
+        <span class="flex-1">
+          <span class="block font-serif text-lg leading-snug">{{QUIZ_PERGUNTA_GANCHO}}</span>
+          <span class="mt-1 block text-xs leading-relaxed text-blush-200/90">{{QUIZ_SUBTITULO}}</span>
+        </span>
+        <svg id="quiz-seta" class="h-5 w-5 shrink-0 opacity-70 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>
+
+      <div id="quiz-painel">
+        <div>
+          <div class="mt-3 rounded-[1.3rem] border border-blush-200 bg-white/85 p-5 shadow-[0_14px_36px_-22px_rgba(109,76,76,.6)] backdrop-blur">
+            <div class="mb-4 flex items-center gap-2" aria-hidden="true">
+              <span class="ponto h-1.5 w-8 rounded-full bg-blush-600" data-ponto="0"></span>
+              <span class="ponto h-1.5 w-3 rounded-full bg-blush-300" data-ponto="1"></span>
+              <span class="ponto h-1.5 w-3 rounded-full bg-blush-300" data-ponto="2"></span>
+            </div>
+            <p id="quiz-pergunta" class="font-serif text-lg leading-snug text-graphite-900">{{QUIZ_PERGUNTA_1}}</p>
+            <div id="quiz-opcoes" class="mt-4 flex flex-col gap-2.5"></div>
+            <div id="quiz-resultado" class="hidden"></div>
+            <button type="button" id="quiz-voltar" class="mt-4 hidden text-xs font-semibold uppercase tracking-[0.14em] text-blush-700">
+              ← Recomeçar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ÁREAS (carrossel) =================
+         2 a 4 cards. Cada card = 1 serviço/área principal do cliente.
+         Se não houver foto de capa, use um fundo em gradiente sólido
+         da paleta (já é o fallback do .capa) em vez de imagem genérica de banco. -->
+    <section class="up mt-8" style="--d:210ms">
+      <h2 class="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-blush-700">
+        <span class="text-gold-500">▸</span> {{TITULO_SECAO_AREAS}}
+      </h2>
+
+      <div class="trilho">
+        <!-- Repita este <article> para cada área/serviço (2 a 4 no total) -->
+        <article>
+          <a href="#" data-whatsapp data-area="{{AREA_1_TITULO}}" class="block">
+            <div class="capa">
+              <img src="{{AREA_1_FOTO_URL}}" alt="{{AREA_1_ALT}}" loading="lazy" decoding="async" width="820" height="820" />
+              <h3 class="relative z-10 font-serif text-lg leading-tight text-white drop-shadow">{{AREA_1_TITULO}}</h3>
+            </div>
+            <p class="mt-2.5 text-[13px] font-semibold leading-snug text-graphite-900">{{AREA_1_DESCRICAO}}</p>
+            <span class="mt-1.5 inline-block rounded-full bg-blush-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-blush-800">{{AREA_1_CTA}}</span>
+          </a>
+        </article>
+
+        <article>
+          <a href="#" data-whatsapp data-area="{{AREA_2_TITULO}}" class="block">
+            <div class="capa">
+              <img src="{{AREA_2_FOTO_URL}}" alt="{{AREA_2_ALT}}" loading="lazy" decoding="async" width="820" height="820" />
+              <h3 class="relative z-10 font-serif text-lg leading-tight text-white drop-shadow">{{AREA_2_TITULO}}</h3>
+            </div>
+            <p class="mt-2.5 text-[13px] font-semibold leading-snug text-graphite-900">{{AREA_2_DESCRICAO}}</p>
+            <span class="mt-1.5 inline-block rounded-full bg-blush-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-blush-800">{{AREA_2_CTA}}</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CARTÕES LARGOS =================
+         Inclua só os cartões que existirem de verdade pro cliente:
+         site oficial, credencial/certificação, localização física.
+         Remova o <a> inteiro do que não se aplicar. -->
+    <section class="mt-4 flex flex-col gap-3">
+      <a href="{{SITE_URL}}" class="cartao up flex items-center gap-3.5 p-3.5" style="--d:260ms">
+        <img src="{{LOGO_URL}}" alt="" class="h-14 w-14 shrink-0 rounded-xl bg-blush-100 object-contain p-1.5" onerror="this.remove()" />
+        <span class="min-w-0 flex-1">
+          <span class="block text-[13px] font-bold uppercase tracking-wide text-graphite-900">Site oficial</span>
+          <span class="block truncate text-[11px] text-graphite-600">{{SITE_DESCRICAO}}</span>
+        </span>
+        <svg class="h-4 w-4 shrink-0 text-blush-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M17.5 6.5 10 14M16.5 13.5v4a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4"/></svg>
+      </a>
+
+      <!-- Cartão de credencial/certificação: remova se o cliente não tiver nenhuma relevante -->
+      <a href="{{CREDENCIAL_URL}}" target="_blank" rel="noopener noreferrer" class="cartao up flex items-center gap-3.5 p-3.5" style="--d:300ms">
+        <img src="{{CREDENCIAL_SELO_URL}}" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover" onerror="this.remove()" />
+        <span class="min-w-0 flex-1">
+          <span class="block text-[13px] font-bold uppercase tracking-wide text-graphite-900">{{CREDENCIAL_TITULO}}</span>
+          <span class="block truncate text-[11px] text-graphite-600">{{CREDENCIAL_DESCRICAO}}</span>
+        </span>
+        <svg class="h-4 w-4 shrink-0 text-blush-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M17.5 6.5 10 14M16.5 13.5v4a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4"/></svg>
+      </a>
+
+      <!-- Cartão de localização: só para negócio com atendimento físico -->
+      <a href="{{ENDERECO_MAPS_URL}}"
+         target="_blank" rel="noopener noreferrer" class="cartao up flex items-center gap-3.5 p-3.5" style="--d:340ms">
+        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blush-100 text-blush-700">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="block text-[13px] font-bold uppercase tracking-wide text-graphite-900">Onde eu atendo</span>
+          <span class="block truncate text-[11px] text-graphite-600">{{NOME_LOCAL_ATENDIMENTO}}</span>
+        </span>
+        <svg class="h-4 w-4 shrink-0 text-blush-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H18v4.5M17.5 6.5 10 14M16.5 13.5v4a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h4"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= WHATSAPP =================
+         Cartão principal sempre presente. Cartão secundário só se
+         existir um segundo público relevante (ex.: parceiros,
+         fornecedores, revenda) — senão remova. -->
+    <section class="mt-4 flex flex-col gap-3">
+      <div class="up relative overflow-hidden rounded-[1.3rem] border border-whats/25 bg-whats-soft p-5" style="--d:380ms">
+        <svg class="pointer-events-none absolute -right-6 -top-6 h-32 w-32 text-whats/10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Z"/></svg>
+        <div class="relative flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-whats-deep">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.25.69-1.44 1.32-2 1.4-.51.08-1.15.11-1.86-.12-.43-.13-.98-.31-1.69-.62-2.98-1.29-4.92-4.29-5.07-4.49-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
+          </span>
+          <div>
+            <p class="text-sm font-bold text-graphite-900">WhatsApp</p>
+            <p class="text-[11px] text-graphite-600">{{WHATSAPP_EXIBICAO}}</p>
+          </div>
+        </div>
+        <p class="relative mt-3 text-[13px] font-semibold uppercase tracking-[0.1em] text-graphite-800">{{CTA_PRINCIPAL_TITULO}}</p>
+        <a href="#" data-whatsapp class="relative mt-3 block rounded-full bg-white/70 py-2.5 text-center text-[13px] font-semibold text-whats-deep transition hover:bg-white">
+          Iniciar conversa →
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= INSTAGRAM =================
+         Só inclua a seção inteira se o cliente passar o @ E os links
+         de posts reais. Sem posts reais informados, remova a seção
+         (nunca invente shortcode de post). -->
+    <section class="up mt-8" style="--d:460ms">
+      <h2 class="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-blush-700">
+        <span class="text-gold-500">▸</span> {{INSTAGRAM_HANDLE}}
+      </h2>
+
+      <div class="trilho" id="ig-trilho"></div>
+
+      <a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener noreferrer"
+         class="cartao mt-1 flex items-center justify-center gap-2 rounded-full py-3 text-[13px] font-semibold text-graphite-900">
+        Ver perfil no Instagram
+        <svg class="h-4 w-4 text-blush-600" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= RODAPÉ =================
+         Registro profissional (CRM/CREFITO/OAB/CRECI/etc.) só se
+         o cliente tiver e passar o número — senão remova a linha. -->
+    <footer class="up mt-10 flex flex-col items-center text-center" style="--d:520ms">
+      <p class="font-serif text-sm tracking-[0.18em] text-graphite-700">{{NOME_CLIENTE_MAIUSCULO}}</p>
+      <p class="mt-1 text-[10px] uppercase tracking-[0.16em] text-graphite-500">{{REGISTRO_PROFISSIONAL}} · {{CIDADE_UF}}</p>
+      <p class="mt-1 text-[9px] uppercase tracking-[0.16em] text-blush-700/60">&copy; <span id="ano">2026</span></p>
+    </footer>
+  </main>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* {{WHATSAPP_NUMERO}} = número completo, só dígitos, com código do país
+       (ex.: 55 82 9XXXX-XXXX vira "55829XXXXXXXX"). Nunca invente este valor. */
+    var WHATSAPP_NUMBER = '{{WHATSAPP_NUMERO}}';
+    var BASE = '{{MENSAGEM_BASE_WHATSAPP}}';
+
+    function url(msg) {
+      return 'https://api.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encodeURIComponent(msg || BASE);
+    }
+
+    document.querySelectorAll('[data-whatsapp]').forEach(function (el) {
+      var msg = el.getAttribute('data-message');
+      if (!msg) {
+        var area = el.getAttribute('data-area');
+        msg = area ? BASE + ' Meu interesse é: ' + area + '.' : BASE;
+      }
+      el.setAttribute('href', url(msg));
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    /* ---------------- QUIZ (opcional) ----------------
+       Estrutura: 1ª pergunta com N ramos; a 2ª pergunta muda
+       conforme a resposta da 1ª (objeto chaveado pelo valor `v`);
+       3ª pergunta fecha o funil. RESULTADOS mapeia o valor da
+       1ª resposta pro texto final. Adapte perguntas/ramos ao
+       número real de áreas/serviços do cliente (2 a 4 ramos). */
+    var PERGUNTAS = [
+      {
+        p: '{{QUIZ_PERGUNTA_1}}',
+        ops: [
+          { t: '{{QUIZ_P1_OPCAO_A}}', v: 'area_a' },
+          { t: '{{QUIZ_P1_OPCAO_B}}', v: 'area_b' }
+        ]
+      },
+      {
+        area_a: { p: '{{QUIZ_P2_AREA_A_PERGUNTA}}', ops: [
+          { t: '{{QUIZ_P2_AREA_A_OPCAO_1}}', v: '{{QUIZ_P2_AREA_A_VALOR_1}}' },
+          { t: '{{QUIZ_P2_AREA_A_OPCAO_2}}', v: '{{QUIZ_P2_AREA_A_VALOR_2}}' }
+        ]},
+        area_b: { p: '{{QUIZ_P2_AREA_B_PERGUNTA}}', ops: [
+          { t: '{{QUIZ_P2_AREA_B_OPCAO_1}}', v: '{{QUIZ_P2_AREA_B_VALOR_1}}' },
+          { t: '{{QUIZ_P2_AREA_B_OPCAO_2}}', v: '{{QUIZ_P2_AREA_B_VALOR_2}}' }
+        ]}
+      },
+      {
+        p: '{{QUIZ_PERGUNTA_3}}',
+        ops: [
+          { t: '{{QUIZ_P3_OPCAO_A}}', v: '{{QUIZ_P3_VALOR_A}}' },
+          { t: '{{QUIZ_P3_OPCAO_B}}', v: '{{QUIZ_P3_VALOR_B}}' }
+        ]
+      }
+    ];
+
+    var RESULTADOS = {
+      area_a: {
+        titulo: '{{AREA_1_TITULO}}',
+        texto: '{{QUIZ_RESULTADO_AREA_A_TEXTO}}'
+      },
+      area_b: {
+        titulo: '{{AREA_2_TITULO}}',
+        texto: '{{QUIZ_RESULTADO_AREA_B_TEXTO}}'
+      }
+    };
+
+    var abrir = document.getElementById('quiz-abrir');
+    var painel = document.getElementById('quiz-painel');
+    var elPergunta = document.getElementById('quiz-pergunta');
+    var elOpcoes = document.getElementById('quiz-opcoes');
+    var elResultado = document.getElementById('quiz-resultado');
+    var elVoltar = document.getElementById('quiz-voltar');
+    var pontos = document.querySelectorAll('.ponto');
+    var passo = 0, respostas = [];
+
+    function marcarPontos() {
+      pontos.forEach(function (pt, i) {
+        var ativo = i === passo;
+        pt.className = 'ponto h-1.5 rounded-full ' + (ativo ? 'w-8 bg-blush-600' : (i < passo ? 'w-3 bg-blush-500' : 'w-3 bg-blush-300'));
+      });
+    }
+
+    function render() {
+      var def = PERGUNTAS[passo];
+      if (passo === 1) def = PERGUNTAS[1][respostas[0].v];
+
+      elPergunta.textContent = def.p;
+      elOpcoes.innerHTML = '';
+      elOpcoes.classList.remove('hidden');
+      elResultado.classList.add('hidden');
+      elVoltar.classList.toggle('hidden', passo === 0);
+      marcarPontos();
+
+      def.ops.forEach(function (op) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'quiz-op flex items-center justify-between gap-3 rounded-xl border border-blush-200 bg-blush-50 px-4 py-3 text-left text-sm text-graphite-800';
+        b.innerHTML = '<span>' + op.t + '</span><span class="text-blush-600">›</span>';
+        b.addEventListener('click', function () {
+          respostas[passo] = op;
+          passo++;
+          if (passo < 3) render(); else mostrarResultado();
+        });
+        elOpcoes.appendChild(b);
+      });
+    }
+
+    function mostrarResultado() {
+      var r = RESULTADOS[respostas[0].v];
+      var detalhes = respostas.slice(1).map(function (x) { return x.v; }).join(', ');
+      var msg = 'Olá! Respondi o quiz no seu link e o resultado foi: ' + r.titulo +
+                ' (' + detalhes + '). Gostaria de saber mais.';
+
+      pontos.forEach(function (pt) { pt.className = 'ponto h-1.5 w-3 rounded-full bg-blush-500'; });
+      elPergunta.textContent = 'Encontrei o seu caminho:';
+      elOpcoes.classList.add('hidden');
+      elResultado.classList.remove('hidden');
+      elResultado.innerHTML =
+        '<div class="mt-4 rounded-xl border border-blush-200 bg-blush-50 p-4">' +
+          '<p class="font-serif text-xl text-graphite-900">' + r.titulo + '</p>' +
+          '<p class="mt-2 text-sm leading-relaxed text-graphite-700">' + r.texto + '</p>' +
+        '</div>' +
+        '<a href="' + url(msg) + '" target="_blank" rel="noopener noreferrer" ' +
+           'class="mt-3 flex items-center justify-center gap-2 rounded-full bg-blush-600 py-3.5 text-sm font-semibold text-white transition hover:bg-blush-700">' +
+          'Falar sobre isso →' +
+        '</a>';
+      elVoltar.classList.remove('hidden');
+    }
+
+    if (abrir) {
+      abrir.addEventListener('click', function () {
+        var aberto = painel.classList.toggle('aberto');
+        abrir.setAttribute('aria-expanded', String(aberto));
+        document.getElementById('quiz-seta').style.transform = aberto ? 'rotate(90deg)' : '';
+        if (aberto && !elOpcoes.children.length) render();
+      });
+      elVoltar.addEventListener('click', function () { passo = 0; respostas = []; render(); });
+    }
+
+    /* ---------------- INSTAGRAM (opcional) ----------------
+       {{POSTS_INSTAGRAM_SHORTCODES}} = shortcodes reais de posts
+       do cliente (o trecho depois de /p/ na URL do post). Nunca
+       invente shortcode — sem posts reais, apague esta seção
+       inteira em vez de deixar o array vazio. */
+    var POSTS = ['{{POST_1_SHORTCODE}}', '{{POST_2_SHORTCODE}}', '{{POST_3_SHORTCODE}}', '{{POST_4_SHORTCODE}}'];
+    var trilho = document.getElementById('ig-trilho');
+
+    function montarIG() {
+      trilho.innerHTML = POSTS.map(function (c) {
+        return '<div class="overflow-hidden rounded-2xl border border-blush-200 bg-white shadow-[0_10px_30px_-18px_rgba(109,76,76,.45)]">' +
+                 '<iframe src="https://www.instagram.com/p/' + c + '/embed/" title="Publicação no Instagram" ' +
+                 'class="block h-[300px] w-full border-0" loading="lazy" scrolling="no"></iframe>' +
+               '</div>';
+      }).join('');
+    }
+
+    if (trilho) {
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es.some(function (e) { return e.isIntersecting; })) { montarIG(); io.disconnect(); }
+        }, { rootMargin: '500px 0px' });
+        io.observe(trilho);
+      } else { montarIG(); }
+    }
+
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>

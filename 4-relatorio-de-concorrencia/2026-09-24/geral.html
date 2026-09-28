@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Concorrência — Legado Digital</title>
+<style>
+  :root{
+    --bg:#f4f6fb;
+    --card-bg:#ffffff;
+    --ink:#151a2d;
+    --ink-soft:#5b6478;
+    --brand:#4338ca;
+    --brand-soft:#eef0fd;
+    --brand-dark:#312e81;
+    --accent:#0ea5a4;
+    --accent-soft:#e6fbfa;
+    --warn:#b45309;
+    --warn-soft:#fef3e2;
+    --danger:#b91c1c;
+    --danger-soft:#fdeceb;
+    --border:#e6e8f0;
+    --shadow:0 4px 18px rgba(20,20,50,0.06);
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    padding:0 0 60px 0;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px;}
+
+  header.hero{
+    background:linear-gradient(135deg,var(--brand-dark),var(--brand) 60%,#6d28d9);
+    color:#fff;
+    padding:44px 20px 60px;
+  }
+  header.hero .wrap{max-width:1160px;}
+  header.hero .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:12px;
+    opacity:.85;
+    font-weight:600;
+  }
+  header.hero h1{
+    margin:10px 0 6px;
+    font-size:clamp(24px,4vw,34px);
+    font-weight:800;
+  }
+  header.hero p.sub{margin:0;opacity:.9;font-size:15px;max-width:680px;}
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+  }
+  .meta-pill{
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:999px;
+    padding:7px 14px;
+    font-size:13px;
+    font-weight:600;
+  }
+
+  .summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:14px;
+    margin-top:-38px;
+    margin-bottom:34px;
+  }
+  .stat-card{
+    background:var(--card-bg);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:18px 20px;
+    border:1px solid var(--border);
+  }
+  .stat-card .label{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;font-weight:700;}
+  .stat-card .value{font-size:24px;font-weight:800;margin-top:6px;color:var(--brand-dark);}
+  .stat-card .hint{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+
+  section{margin:38px 0;}
+  .section-title{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .section-title h2{
+    font-size:20px;
+    margin:0;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .section-title .count{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  .alert{
+    border-radius:var(--radius);
+    padding:16px 18px;
+    border:1px solid #f3d3ae;
+    background:var(--warn-soft);
+    color:#7c3a06;
+    font-size:14px;
+    margin-bottom:24px;
+  }
+  .alert.danger{background:var(--danger-soft);border-color:#f3b3ac;color:#7f1d1d;}
+  .alert strong{display:block;margin-bottom:4px;font-size:14px;}
+
+  .client-card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:26px 26px 22px;
+    margin-bottom:26px;
+  }
+  .client-head{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:16px;
+    align-items:flex-start;
+    border-bottom:1px solid var(--border);
+    padding-bottom:16px;
+    margin-bottom:18px;
+  }
+  .client-head h3{
+    margin:0 0 4px 0;
+    font-size:19px;
+    font-weight:800;
+  }
+  .client-head .niche{
+    font-size:13px;
+    color:var(--brand-dark);
+    font-weight:700;
+    background:var(--brand-soft);
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-top:6px;
+  }
+  .kpi-row{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .kpi{
+    text-align:right;
+  }
+  .kpi .k-label{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;font-weight:700;}
+  .kpi .k-value{font-size:18px;font-weight:800;color:var(--ink);}
+
+  .tag{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:700;
+    padding:4px 10px;
+    border-radius:999px;
+    margin:2px 4px 2px 0;
+    white-space:nowrap;
+  }
+  .tag-blue{background:var(--brand-soft);color:var(--brand-dark);}
+  .tag-teal{background:var(--accent-soft);color:#0b6b6a;}
+  .tag-amber{background:var(--warn-soft);color:var(--warn);}
+  .tag-gray{background:#f1f2f7;color:#444a5e;}
+
+  h4.block-title{
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+    margin:22px 0 10px;
+    font-weight:800;
+  }
+
+  table.comp-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  table.comp-table th{
+    text-align:left;
+    background:#f8f9fd;
+    color:var(--ink-soft);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    padding:10px 12px;
+    border-bottom:2px solid var(--border);
+  }
+  table.comp-table td{
+    padding:11px 12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  table.comp-table tr:last-child td{border-bottom:none;}
+  table.comp-table td.name{font-weight:700;color:var(--ink);}
+
+  .angle-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+    margin-top:4px;
+  }
+  .angle-card{
+    background:#f8f9fd;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:13px;
+    color:var(--ink);
+  }
+  .angle-card .angle-label{font-weight:800;font-size:12px;color:var(--brand-dark);margin-bottom:4px;display:block;}
+
+  .note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed var(--border);
+  }
+
+  footer{
+    max-width:1160px;
+    margin:40px auto 0;
+    padding:0 20px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  footer .foot-card{
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px 20px;
+  }
+
+  @media (max-width:640px){
+    .client-head{flex-direction:column;}
+    .kpi-row{gap:14px;}
+    .kpi{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Legado Digital · Inteligência de Concorrência</div>
+    <h1>Relatório de Concorrência Geral</h1>
+    <p class="sub">Mapeamento dos clientes com veiculação ativa de anúncios Meta nos últimos 7 dias, cruzado com a Biblioteca de Anúncios (Ad Library) para identificar concorrentes diretos, volume de anúncios, criativos, ângulos de venda, mecânicas de oferta e CTAs por nicho.</p>
+    <div class="meta-row">
+      <span class="meta-pill">📅 Período analisado: últimos 7 dias</span>
+      <span class="meta-pill">🗓️ Gerado em 20/09/2026</span>
+      <span class="meta-pill">🏢 8 contas do portfólio · 7 ativas</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="summary-grid">
+    <div class="stat-card">
+      <div class="label">Clientes ativos (7d)</div>
+      <div class="value">7 / 8</div>
+      <div class="hint">1 conta sem acesso (La Onda)</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Investimento total (7d)</div>
+      <div class="value">R$ 5.044,31</div>
+      <div class="hint">Somatório das 7 contas ativas</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Impressões totais (7d)</div>
+      <div class="value">408.509</div>
+      <div class="hint">Alcance combinado do portfólio</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Nichos mapeados</div>
+      <div class="value">6</div>
+      <div class="hint">Varejo, entretenimento, artesanato, saúde, decoração, moda</div>
+    </div>
+  </div>
+
+  <div class="alert danger">
+    <strong>⚠️ Acesso negado — CA · La Onda Moda Playa (act_840274048399377)</strong>
+    A API do Meta Ads retornou "Ad account not found or you do not have access" para esta conta. Não foi possível confirmar veiculação nos últimos 7 dias nem gerar a seção de concorrência para este cliente. Recomenda-se revisar as permissões de acesso do Business Manager para esta conta o quanto antes.
+  </div>
+
+  <div class="alert">
+    <strong>ℹ️ Nota metodológica sobre a Biblioteca de Anúncios</strong>
+    A busca pública da Ad Library não permite filtro nativo por cidade/bairro — apenas por país. Os concorrentes listados abaixo foram selecionados por relevância de nicho e por correspondência textual nos criativos; recomenda-se validação manual de proximidade geográfica para os nichos hiperlocais (supermercado e clínica odontológica).
+  </div>
+
+  <!-- =============== SUPERMERCADO SÃO LUIZ =============== -->
+  <section>
+    <div class="section-title"><h2>🛒 Supermercado São Luiz</h2><span class="count">act_254866402925450 · Arapiraca/AL</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Varejo alimentar / Supermercado regional</h3>
+          <span class="niche">Nicho: Supermercado & Atacarejo</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k-label">Investido 7d</div><div class="k-value">R$ 761,35</div></div>
+          <div class="kpi"><div class="k-label">Impressões 7d</div><div class="k-value">108.780</div></div>
+          <div class="kpi"><div class="k-label">Anúncios ativos no nicho (BR)</div><div class="k-value">~6.200</div></div>
+        </div>
+      </div>
+
+      <h4 class="block-title">Concorrentes diretos identificados na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Volume/Sinal</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Consalter Supermercado</td><td><span class="tag tag-blue">Ativo</span></td><td>Rede regional, campanhas correntes de ofertas gerais</td></tr>
+          <tr><td class="name">Popular Atacadista</td><td><span class="tag tag-blue">Ativo</span></td><td>Posicionamento de atacarejo, preço agressivo</td></tr>
+          <tr><td class="name">SuperMercado Família</td><td><span class="tag tag-blue">Ativo</span></td><td>Apelo familiar/comunitário</td></tr>
+          <tr><td class="name">Supermercado Catanduva</td><td><span class="tag tag-amber">Vários criativos simultâneos</span></td><td>Testando múltiplas variações de criativo em paralelo</td></tr>
+          <tr><td class="name">Super Daki</td><td><span class="tag tag-blue">Ativo</span></td><td>Marca de rede regional em expansão</td></tr>
+          <tr><td class="name">Shekinah Supermercado</td><td><span class="tag tag-teal">Delivery</span></td><td>Diferencial de delivery próprio</td></tr>
+          <tr><td class="name">Supermercado Serra Azul / Mendes / Saviski</td><td><span class="tag tag-gray">Ativo</span></td><td>Padrão de rede regional pequena/média, mesmo formato de anúncio</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânicas de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Oferta por categoria/dia</span>Preço fixo agressivo (ex: "R$10", "R$20") em hortifrúti, açougue e frios, trocado a cada 2-3 dias — mesma mecânica já usada pelo São Luiz.</div>
+        <div class="angle-card"><span class="angle-label">Delivery / conveniência</span>Pedidos via WhatsApp ou app próprio, destacando rapidez de entrega.</div>
+        <div class="angle-card"><span class="angle-label">Datas comemorativas</span>Encartes especiais para Natal, Páscoa, Dia das Mães e Dia do Consumidor.</div>
+        <div class="angle-card"><span class="angle-label">Fidelização</span>Clube de pontos e programas de recorrência como isca de engajamento.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-blue">Aproveite as ofertas!</span>
+      <span class="tag tag-blue">Peça pelo Delivery</span>
+      <span class="tag tag-blue">Veja essa oferta</span>
+      <span class="tag tag-gray">Saiba mais (perfil Instagram)</span>
+
+      <div class="note">O próprio São Luiz já usa encartes por categoria, WhatsApp de reativação e campanha de app fidelidade ("Meu Queridinho") — mecânica alinhada ao padrão do nicho, com oportunidade de intensificar delivery como diferencial frente aos concorrentes regionais.</div>
+    </div>
+  </section>
+
+  <!-- =============== GO GAMES (JACAREPAGUÁ + GOIÂNIA) =============== -->
+  <section>
+    <div class="section-title"><h2>🕹️ Go Games — Jacarepaguá & Goiânia</h2><span class="count">act_524247290166854 · act_706269358010254</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Entretenimento familiar / Arcade & fliperama</h3>
+          <span class="niche">Nicho: Entretenimento / Lazer indoor</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k-label">Investido 7d (Jacarepaguá)</div><div class="k-value">R$ 692,67</div></div>
+          <div class="kpi"><div class="k-label">Investido 7d (Goiânia)</div><div class="k-value">R$ 1.069,46</div></div>
+          <div class="kpi"><div class="k-label">Impressões 7d (combinado)</div><div class="k-value">89.002</div></div>
+        </div>
+      </div>
+
+      <div class="alert" style="margin-top:0;">
+        <strong>Nicho de baixa saturação</strong> — apenas ~15 anúncios ativos no Brasil para o termo "fliperama / arcade / diversão em família", indicando espaço competitivo aberto comparado aos demais clientes do portfólio.
+      </div>
+
+      <h4 class="block-title">Concorrentes diretos identificados na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Volume/Sinal</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Arcade Play</td><td><span class="tag tag-amber">6+ anúncios no histórico</span></td><td>Maior recorrência de veiculação do nicho; CTA fixo de conversa direta</td></tr>
+          <tr><td class="name">Round2 Arcade</td><td><span class="tag tag-blue">Ativo</span></td><td>Atendimento via WhatsApp Business</td></tr>
+          <tr><td class="name">Versus Arcade Shop</td><td><span class="tag tag-blue">Ativo</span></td><td>Possível modelo híbrido loja + espaço de jogo</td></tr>
+          <tr><td class="name">Old School Pinball Experience (SP)</td><td><span class="tag tag-teal">Venda de ingresso</span></td><td>Monetiza por experiência/evento, não recorrência mensal</td></tr>
+          <tr><td class="name">Arcade 80 / Toda Hora Prime</td><td><span class="tag tag-gray">Ativo</span></td><td>Apelo nostálgico ("tem coisas que o tempo passa... mas a sensação nunca muda")</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânicas de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Nostalgia</span>Resgate emocional de infância como gatilho principal ("a sensação nunca muda").</div>
+        <div class="angle-card"><span class="angle-label">Experiência em grupo</span>Programa para famílias e turmas de amigos, foco em socialização.</div>
+        <div class="angle-card"><span class="angle-label">Evento/ingresso</span>Alguns players monetizam por evento pontual (ex: torneio de pinball) em vez de visita avulsa.</div>
+        <div class="angle-card"><span class="angle-label">Conversa direta</span>Quase todo o nicho aposta em campanhas de mensagens, sem oferta de desconto explícita nos criativos.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-blue">Converse conosco</span>
+      <span class="tag tag-blue">Chat with us</span>
+      <span class="tag tag-teal">Ingressos</span>
+
+      <div class="note">O padrão do nicho reforça a estratégia já adotada pela Go Games (campanhas de engajamento/mensagens). Como o mercado é pouco saturado, há espaço para diferenciação com pacotes de aniversário/eventos, ainda pouco explorados pelos concorrentes mapeados.</div>
+    </div>
+  </section>
+
+  <!-- =============== MAZULLI ARTE =============== -->
+  <section>
+    <div class="section-title"><h2>🎨 Mazulli Arte</h2><span class="count">act_302329694647309 · Moldes de silicone</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>E-commerce de moldes de silicone (artesanato/confeitaria)</h3>
+          <span class="niche">Nicho: Artesanato & Confeitaria</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k-label">Investido 7d</div><div class="k-value">R$ 863,71</div></div>
+          <div class="kpi"><div class="k-label">Impressões 7d</div><div class="k-value">99.401</div></div>
+          <div class="kpi"><div class="k-label">Anúncios ativos no nicho (BR)</div><div class="k-value">~21</div></div>
+        </div>
+      </div>
+
+      <h4 class="block-title">Concorrentes diretos identificados na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Volume/Sinal</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Cricartes Moldes</td><td><span class="tag tag-blue">Ativo</span></td><td>Concorrente direto de moldes de silicone</td></tr>
+          <tr><td class="name">Haffik Moldes</td><td><span class="tag tag-blue">Ativo</span></td><td>Mesmo segmento de produto</td></tr>
+          <tr><td class="name">Darlene Artesanatos</td><td><span class="tag tag-amber">Vários criativos</span></td><td>Testa múltiplos formatos de anúncio</td></tr>
+          <tr><td class="name">3D Cutter</td><td><span class="tag tag-blue">Ativo</span></td><td>Posiciona-se como "tudo para suas criações em um só lugar"</td></tr>
+          <tr><td class="name">Jesmonite Brasil</td><td><span class="tag tag-teal">Prova social</span></td><td>Usa apelo estético ("os moldes mais lindos")</td></tr>
+          <tr><td class="name">Redecenter (Moema/Vila Guilherme)</td><td><span class="tag tag-teal">⭐4.8/5.0</span></td><td>Adjacente (banho/decoração), forte uso de avaliações como prova social</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânicas de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Prova social</span>Estrelas e nota de satisfação (⭐4.8–4.9/5.0) em destaque no criativo.</div>
+        <div class="angle-card"><span class="angle-label">Catálogo amplo</span>"Tudo em um só lugar" — reforço de variedade/sortimento.</div>
+        <div class="angle-card"><span class="angle-label">Estética do produto</span>Foco visual no resultado final do molde/peça, não no preço.</div>
+        <div class="angle-card"><span class="angle-label">Live commerce</span>A própria Mazulli já usa lives de vendas quente/frio — mecânica pouco comum nos concorrentes mapeados, um diferencial a explorar.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-gray">Perfil Instagram como destino</span>
+      <span class="tag tag-blue">Comprar / Ver produto</span>
+      <span class="tag tag-teal">Prova social (estrelas)</span>
+
+      <div class="note">Nenhum concorrente mapeado usa lives de venda como a Mazulli — vale reforçar esse formato como diferencial competitivo nos criativos e explorar depoimentos/avaliações, tática ainda pouco usada pela conta.</div>
+    </div>
+  </section>
+
+  <!-- =============== LAVDENT+ =============== -->
+  <section>
+    <div class="section-title"><h2>🦷 Lavdent+</h2><span class="count">act_1029431584368518 · Madureira/RJ</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Clínica odontológica / Aparelho dental (ortodontia)</h3>
+          <span class="niche">Nicho: Odontologia & Estética Dental</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k-label">Investido 7d</div><div class="k-value">R$ 903,99</div></div>
+          <div class="kpi"><div class="k-label">Impressões 7d</div><div class="k-value">55.819</div></div>
+          <div class="kpi"><div class="k-label">Anúncios ativos no nicho (BR)</div><div class="k-value">~388</div></div>
+        </div>
+      </div>
+
+      <div class="alert" style="margin-top:0;">
+        <strong>Nicho altamente saturado</strong> — 388 anúncios ativos no Brasil para "aparelho dental/ortodontia". A Ad Library não permite filtrar por bairro, então a lista abaixo prioriza padrões nacionais relevantes; recomenda-se checagem manual de clínicas específicas de Madureira/Zona Norte do RJ.
+      </div>
+
+      <h4 class="block-title">Concorrentes/referências de destaque na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Volume/Sinal</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Rede Odonto Excellence</td><td><span class="tag tag-amber">Franquia multi-unidade</span></td><td>Unidades em PR, SC e BA rodando o mesmo criativo padronizado — modelo de expansão agressiva via ads</td></tr>
+          <tr><td class="name">Dra. Joyce Mello Estética Dental</td><td><span class="tag tag-blue">Ativo</span></td><td>Ângulo de urgência: "Ortodontia com início imediato!"</td></tr>
+          <tr><td class="name">Dental Center</td><td><span class="tag tag-blue">Ativo</span></td><td>Nome genérico, sugere posicionamento de rede</td></tr>
+          <tr><td class="name">Odontologia Mesquita</td><td><span class="tag tag-teal">CTA de avaliação</span></td><td>"Agende a sua avaliação" como isca de entrada</td></tr>
+          <tr><td class="name">Studio Sorrisos (Telêmaco Borba-PR)</td><td><span class="tag tag-gray">Ativo</span></td><td>Clínica médica + odontológica combinada</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânicas de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Início imediato</span>Remoção de fricção temporal — "comece hoje", sem espera.</div>
+        <div class="angle-card"><span class="angle-label">Avaliação gratuita</span>Isca de topo de funil recorrente em quase todos os concorrentes.</div>
+        <div class="angle-card"><span class="angle-label">Parcelamento / combo de valor</span>Mesma mecânica já usada pela própria Lavdent+ ("combo valor") — padrão consolidado do nicho.</div>
+        <div class="angle-card"><span class="angle-label">Expansão via franquia</span>Redes como Odonto Excellence usam criativo padrão replicado por cidade, sinal de escala agressiva.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-blue">Agende sua avaliação</span>
+      <span class="tag tag-blue">Converse conosco</span>
+      <span class="tag tag-teal">Faça seu Plano!</span>
+
+      <div class="note">A Lavdent+ já compete de forma alinhada ao padrão do nicho (combo valor, engajamento via WhatsApp). O risco competitivo maior vem de redes de franquia em expansão nacional — vale monitorar se alguma abrirá unidade na Zona Norte do Rio.</div>
+    </div>
+  </section>
+
+  <!-- =============== IVI INTERIORES =============== -->
+  <section>
+    <div class="section-title"><h2>🛋️ Ivi Interiores &amp; Decorações</h2><span class="count">act_484404834087570</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Design de interiores / Decoração</h3>
+          <span class="niche">Nicho: Arquitetura & Decoração</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k-label">Investido 7d</div><div class="k-value">R$ 593,35</div></div>
+          <div class="kpi"><div class="k-label">Impressões 7d</div><div class="k-value">36.527</div></div>
+          <div class="kpi"><div class="k-label">Anúncios ativos no nicho (BR)</div><div class="k-value">~1.540</div></div>
+        </div>
+      </div>
+
+      <h4 class="block-title">Concorrentes diretos identificados na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Volume/Sinal</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td class="name">AnmoBe Interiores</td><td><span class="tag tag-amber">8+ criativos simultâneos</span></td><td>Maior intensidade de veiculação do grupo mapeado — forte sinal de investimento</td></tr>
+          <tr><td class="name">LB Interiores</td><td><span class="tag tag-blue">Ativo</span></td><td>CTA padrão "Fale conosco"</td></tr>
+          <tr><td class="name">Art Móveis e Interiores</td><td><span class="tag tag-blue">Ativo</span></td><td>Combina venda de móveis + projeto</td></tr>
+          <tr><td class="name">Beatriz Karollyn — Arquitetura e Interiores</td><td><span class="tag tag-gray">Ativo</span></td><td>Posicionamento pessoal/autoral (arquiteta como marca)</td></tr>
+          <tr><td class="name">Designer de Interiores Personal Organizer — Fran Prati</td><td><span class="tag tag-teal">Serviço combinado</span></td><td>Agrega organização + decoração no mesmo pacote</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânicas de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Projeto gratuito</span>Isca de entrada muito comum: "Agende seu projeto gratuito".</div>
+        <div class="angle-card"><span class="angle-label">Antes/depois visual</span>Portfólio de ambientes transformados como prova de resultado.</div>
+        <div class="angle-card"><span class="angle-label">Autoridade pessoal</span>Profissionais posicionando o próprio nome como marca (arquiteta/designer).</div>
+        <div class="angle-card"><span class="angle-label">Serviço combinado</span>Pacotes de decoração + organização/moveis como forma de aumentar ticket.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-blue">Fale conosco</span>
+      <span class="tag tag-blue">Agende seu projeto gratuito</span>
+      <span class="tag tag-gray">Saiba mais</span>
+
+      <div class="note">É um nicho de alto volume nacional. Vale observar de perto a AnmoBe Interiores pelo volume de criativos simultâneos — sinal de teste ativo de campanhas e de orçamento relevante.</div>
+    </div>
+  </section>
+
+  <!-- =============== STYLUS CONCEPT =============== -->
+  <section>
+    <div class="section-title"><h2>👠 Stylus Concept</h2><span class="count">act_1667130234603449</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Calçados e acessórios femininos premium</h3>
+          <span class="niche">Nicho: Moda & Calçados Femininos</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="k-label">Investido 7d</div><div class="k-value">R$ 159,78</div></div>
+          <div class="kpi"><div class="k-label">Impressões 7d</div><div class="k-value">18.980</div></div>
+          <div class="kpi"><div class="k-label">Anúncios ativos no nicho (BR)</div><div class="k-value">~140</div></div>
+        </div>
+      </div>
+
+      <h4 class="block-title">Concorrentes diretos identificados na Ad Library</h4>
+      <table class="comp-table">
+        <thead><tr><th>Concorrente</th><th>Volume/Sinal</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td class="name">Corello</td><td><span class="tag tag-blue">Marca estabelecida</span></td><td>"Sandálias femininas — Corello", forte reconhecimento de marca</td></tr>
+          <tr><td class="name">Flor D'Couro</td><td><span class="tag tag-blue">Ativo</span></td><td>"Sandálias e Botas Femininas" — posicionamento de couro/qualidade</td></tr>
+          <tr><td class="name">NL Shoes</td><td><span class="tag tag-blue">Ativo</span></td><td>Concorrente direto de calçados femininos</td></tr>
+          <tr><td class="name">Mybez e Loucas por Sapatilhas</td><td><span class="tag tag-teal">Qualidade como ângulo</span></td><td>"Sandálias de extrema qualidade!"</td></tr>
+          <tr><td class="name">Pinókio Calçados</td><td><span class="tag tag-blue">Ativo</span></td><td>Loja regional com linha de sandálias</td></tr>
+          <tr><td class="name">SHEIN Brasil / Temu Brazil</td><td><span class="tag tag-amber">Concorrência indireta (fast-fashion)</span></td><td>Catálogo massivo e preço agressivo — pressão indireta sobre o ticket médio do nicho</td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="block-title">Ângulos de venda & mecânicas de oferta no nicho</h4>
+      <div class="angle-grid">
+        <div class="angle-card"><span class="angle-label">Sofisticação / status</span>Ângulo já usado pela própria Stylus: "Look Completo: Sofisticação Diária", "Acessórios Premium: Seu Status".</div>
+        <div class="angle-card"><span class="angle-label">Urgência de estoque</span>"Toque e garanta a peça mais desejada... antes que esgote."</div>
+        <div class="angle-card"><span class="angle-label">Parcelamento</span>Concorrentes populares batem forte em "Em até 10x!" como gatilho de preço.</div>
+        <div class="angle-card"><span class="angle-label">Qualidade/material</span>Foco em couro e durabilidade como diferencial frente ao fast-fashion.</div>
+      </div>
+
+      <h4 class="block-title">CTAs observados</h4>
+      <span class="tag tag-blue">Comprar agora</span>
+      <span class="tag tag-teal">Em até 10x!</span>
+      <span class="tag tag-gray">Saiba mais / Instagram</span>
+
+      <div class="note">Menor investimento do portfólio (R$159,78/7d) num nicho de porte médio (~140 anúncios ativos). A pressão de preço vem principalmente de SHEIN/Temu — o posicionamento premium da Stylus é a defesa natural, reforçado pelos concorrentes de nicho (Corello, Flor D'Couro) que também competem por qualidade, não por preço.</div>
+    </div>
+  </section>
+
+  <!-- =============== LA ONDA (SEM ACESSO) =============== -->
+  <section>
+    <div class="section-title"><h2>🏖️ CA – La Onda Moda Playa</h2><span class="count">act_840274048399377 · Sem acesso</span></div>
+    <div class="client-card">
+      <div class="client-head">
+        <div>
+          <h3>Moda praia (nicho presumido pelo nome da conta)</h3>
+          <span class="niche" style="background:var(--danger-soft);color:var(--danger);">Dado não disponível</span>
+        </div>
+      </div>
+      <p style="font-size:14px;color:var(--ink-soft);margin:0;">A API do Meta Ads retornou erro de acesso para esta conta ("Ad account not found or you do not have access"). Não foi possível confirmar veiculação nos últimos 7 dias, nem gerar a análise de concorrência correspondente. Nenhum dado foi estimado ou inventado para esta seção — recomenda-se verificar o Business Manager e reexecutar esta rotina após a permissão ser restabelecida.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-card">
+      <strong>Fonte dos dados:</strong> Meta Ads (conector MCP) para métricas de conta e campanha própria; Meta Ad Library (Biblioteca de Anúncios) para o mapeamento de concorrentes, criativos e CTAs. Números de "anúncios ativos no nicho" refletem o <em>estimated_total_count</em> retornado pela Ad Library para os termos de busca usados e servem como indicador de saturação, não como contagem exata de concorrentes diretos. Relatório gerado automaticamente pela rotina de inteligência de concorrência da Legado Digital.
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
