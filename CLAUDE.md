@@ -171,11 +171,13 @@ Qualquer dúvida, tô à disposição.
 - `Observações:` é **um parágrafo corrido**, não lista. Fala do que mudou no custo, do que melhorou em qualidade, e de qual é o foco daqui pra frente. Pode referenciar algo que o cliente comentou.
 - Fecha sempre com `Qualquer dúvida, tô à disposição.`
 
-**Links dos criativos:** não estão no modelo original. Só inclua se eu pedir. Quando pedir, entram logo depois das frases de volume, assim:
+**Links dos criativos — OBRIGATÓRIO:** a mensagem do WhatsApp sempre traz os **4 melhores criativos** do período (por custo por resultado, entre os que tiveram resultado), cada um com o número de resultados, o custo e o link de `ads_get_ad_preview` completo logo abaixo, entrando logo antes de `Observações:`:
 
 ```
-Links dos criativos:
-[nome do criativo] — [preview_url completa]
+Top 4 criativos do período:
+*1º [nome legível do criativo]* : [resultados], R$ [custo] cada
+[preview_url completa]
+...
 ```
 
 ### B) RELATÓRIO DE PÚBLICO (últimos 30 dias)
