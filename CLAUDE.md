@@ -4,6 +4,16 @@
 
 ---
 
+## REGRA FIXA — TODO RELATÓRIO TEM MENSAGEM DE WHATSAPP
+
+Todo arquivo de relatório, de qualquer rotina ou pedido avulso, **começa** com a seção:
+
+`## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)`
+
+seguida da mensagem pronta dentro de um bloco de código (```), para o Davi copiar e colar direto no WhatsApp do cliente. Depois vem `## ANÁLISE INTERNA (não enviar)` com o resto. Nunca entregue um relatório só com análise interna.
+
+---
+
 ## CONECTORES
 
 Meta Ads e Windsor.ai já estão conectados como MCP no Claude Code.

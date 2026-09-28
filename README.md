@@ -16,6 +16,8 @@ Exemplo: `1-relatorio-de-criativos/2026-09-21/go-games-goiania.md`
 
 Arquivos que começam com `_` (ex.: `_varredura-interna.md`) são análises internas com várias contas e não vão para o cliente.
 
+Todo relatório começa com a **mensagem pronta para o WhatsApp** do cliente (copiar e colar), seguida da análise interna.
+
 `CLAUDE.md` contém as regras gerais usadas pelas rotinas.
 
 ## Regra para as rotinas
