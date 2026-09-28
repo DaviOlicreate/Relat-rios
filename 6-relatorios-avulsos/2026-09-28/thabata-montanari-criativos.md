@@ -1,6 +1,26 @@
 # Studio Thabata Montanari — Análise de criativos (últimos 30 dias)
 **Conta:** CA01 – THABATA MONTANARI (1149413875505297) · Gerado em 28/09/2026
 
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
+
+```
+*Oi pessoal, analisei os dados dos criativos da conta nos últimos 30 dias. Segue o resumo:*
+*Período* : 29/08 a 27/09
+*Investimento total* : R$ 230,27
+*Impressões* : 7.558
+*Cliques* : 309
+*CTR médio* : 4,09%
+Melhor criativo
+*Campanha de mensagens:* vídeo "Dia de manutenção"
+Na campanha de mensagens nós conseguimos 58 mensagens, com custo médio de R$ 3,97 por mensagem. Só o vídeo de manutenção trouxe 54 delas, a R$ 3,65 cada.
+Observações:
+O vídeo que mostra a manutenção do alongamento e responde se ele atrapalha o crescimento do cabelo foi disparado o que mais chamou o público, então vamos produzir novas versões nesse mesmo estilo respondendo outras dúvidas comuns das clientes. Os anúncios ficaram sem veicular nesta última semana e já estamos ajustando para voltarem a rodar o quanto antes.
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
 ## ALERTA — conta sem veiculação nos últimos 7 dias
 - Gasto de **R$ 0,00** entre 21/09 e 27/09.
 - Os 4 anúncios da campanha `leg_captação_frio` estão com status **WITH_ISSUES** (problema de entrega: pagamento, reprovação ou limite). O conjunto duplicado e a campanha `leg_mens2_frio` estão pausados.
