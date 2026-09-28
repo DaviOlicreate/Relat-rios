@@ -1,10 +1,9 @@
 # Go Games Goiânia — Relatório de Públicos (últimos 30 dias)
 Conta: 706269358010254 | Gerado em 2026-09-28
 
-Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp, somando duas campanhas ativas (402 mensagens, R$ 3.418,92, custo médio R$ 8,50). Apoio: campanha de visitas ao perfil (2.095 visitas, R$ 513,50, R$ 0,25 cada). Campanha de conversão do site: R$ 69,79 investidos, sem resultado (Dado não disponível), hoje pausada. Investimento total da conta: R$ 4.002,21. Indicadores diferentes não foram somados.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -36,7 +35,15 @@ Faixa Etária Principal
 - Nenhum conjunto passou de frequência 2,3, então não há sinal de saturação.
 - Pior conjunto do mês: o público novo (que ainda não conhece a marca), na oferta de R$ 1.043, gerou 27 mensagens a R$ 12,36 (R$ 333,67) e está pausado. Também a campanha de conversão do site gastou R$ 69,79 sem gerar leads e está pausada.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp, somando duas campanhas ativas (402 mensagens, R$ 3.418,92, custo médio R$ 8,50). Apoio: campanha de visitas ao perfil (2.095 visitas, R$ 513,50, R$ 0,25 cada). Campanha de conversão do site: R$ 69,79 investidos, sem resultado (Dado não disponível), hoje pausada. Investimento total da conta: R$ 4.002,21. Indicadores diferentes não foram somados.
+
 
 - Validação: mensagens por gênero (373+26+3), idade (24+122+204+40+8+2+2) e conjunto (206+63+46+27+60) fecham em 402; investimento fecha em R$ 3.418,92. Visitas ao perfil por gênero fecham em 2.095. A campanha de conversão do site (leads pixel) veio "Not available" em todos os recortes com R$ 69,79 gastos — tratado como zero resultado, sem estimativa.
 - Volume fraco: 18-24 (24 mensagens), 55-64 (8 mensagens, R$ 4,03), 65+ (2), homens (26) e Facebook (28) são leituras direcionais. A diferença 8,33 vs 9,82 (18%) entre 35-44 e 25-34 passa de 15%, com base de 122-204 mensagens: sinal razoável. Facebook vs Instagram (5%) está abaixo de 15%, não conclusivo.

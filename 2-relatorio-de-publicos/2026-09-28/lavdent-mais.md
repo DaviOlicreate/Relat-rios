@@ -1,10 +1,9 @@
 # Lavdent + — Relatório de Públicos (últimos 30 dias)
 Conta: 1029431584368518 | Gerado em 2026-09-28
 
-Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp, somando 2 campanhas ativas (258 mensagens, R$ 2.502,43, custo médio R$ 9,70). Apoio: campanha de formulário instantâneo em Madureira, pausada (4 leads, R$ 143,33, R$ 35,83 cada). Indicadores diferentes não foram somados. Investimento total da conta: R$ 2.645,76.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -35,7 +34,15 @@ Faixa Etária Principal
 - Pior conjunto do mês: o formulário instantâneo de Madureira gastou R$ 143,33 e gerou 4 leads a R$ 35,83. A campanha já está pausada.
 - Nenhum conjunto passou de frequência 2,5, então não há sinal de cansaço do público.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp, somando 2 campanhas ativas (258 mensagens, R$ 2.502,43, custo médio R$ 9,70). Apoio: campanha de formulário instantâneo em Madureira, pausada (4 leads, R$ 143,33, R$ 35,83 cada). Indicadores diferentes não foram somados. Investimento total da conta: R$ 2.645,76.
+
 
 - Validação: mensagens por gênero (178+79+1), idade (32+201+25) e plataforma (79+179) fecham em 258; investimento fecha em R$ 2.502,43. Leads do formulário por gênero fecham em 4 (3+1). "Not available" nos recortes sem resultado (18-24 e 35-44 no formulário, Instagram no formulário R$ 37,31, audience_network R$ 0,14) tratado como zero. Alcance é citado por campanha, sem somar entre campanhas (pessoas se repetem).
 - Achado forte e consistente: Facebook custa 32-52% menos que Instagram nas duas campanhas, e 35-44 é 22-41% mais barato que 25-34/18-24. Bases de 79-201 mensagens. Sugestão: testar conjunto Facebook-only e conjunto 30-44 com verba separada; reduzir 18-24 (R$ 14,14; 18,1% da verba).

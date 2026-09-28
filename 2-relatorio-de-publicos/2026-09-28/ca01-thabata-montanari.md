@@ -1,10 +1,9 @@
 # CA01 – Thabata Montanari — Relatório de Públicos (últimos 30 dias)
 Conta: 1149413875505297 | Gerado em 2026-09-28
 
-Resultado principal: mensagens iniciadas no WhatsApp, somando 2 campanhas (58 mensagens, R$ 230,27, custo médio R$ 3,97). Só uma campanha está ativa ("captação"); a outra está pausada e tem volume mínimo (4 mensagens, R$ 20,83). Conta com investimento baixo no período: as leituras abaixo são direcionais.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -34,7 +33,15 @@ Faixa Etária Principal
 - Sem sinal de saturação: a frequência do conjunto principal está em 1,57, então ainda há espaço para crescer com mais verba.
 - Pior conjunto do mês: a cópia pausada com 2 mensagens a R$ 5,83, mas com apenas R$ 11,66 investidos, sem relevância estatística.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal: mensagens iniciadas no WhatsApp, somando 2 campanhas (58 mensagens, R$ 230,27, custo médio R$ 3,97). Só uma campanha está ativa ("captação"); a outra está pausada e tem volume mínimo (4 mensagens, R$ 20,83). Conta com investimento baixo no período: as leituras abaixo são direcionais.
+
 
 - Validação: mensagens por idade (3+12+30+13) e plataforma (8+50) fecham em 58; investimento fecha em R$ 230,27. Recortes "Not available" (18-24 e 45-54 na campanha pausada, R$ 1,48 e R$ 4,79; Facebook na campanha pausada, R$ 0,68) tratados como zero resultado.
 - Volume fraco: conta com R$ 230,27 e 58 mensagens. Nenhuma comparação supera o mínimo de robustez (Facebook 8 mensagens, 18-24 com 3). A diferença 3,38 vs 4,47-5,50 entre idades (24-39%) passa de 15%, mas com bases de 12-30 mensagens: direcional.

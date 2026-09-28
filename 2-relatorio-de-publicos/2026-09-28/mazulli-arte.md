@@ -1,10 +1,9 @@
 # Mazulli Arte — Relatório de Públicos (últimos 30 dias)
 Conta: 302329694647309 | Gerado em 2026-09-28
 
-Resultado principal (espinha dorsal): compras no site (e-commerce, pixel), somando 5 campanhas de vendas: 34 compras, R$ 2.117,14 investidos, custo médio R$ 62,27 por compra, R$ 4.810,09 em vendas registradas (ROAS 2,27). Apoio: campanha de tráfego da live de 14/09 (4.953 cliques no link, R$ 355,79, pausada) e uma campanha de alcance da live de 07/08 (R$ 19,62, sem resultado comparável). Investimento total da conta: R$ 2.492,55. Indicadores diferentes não foram somados; os recortes abaixo consideram só as campanhas de vendas.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -43,7 +42,15 @@ Faixa Etária Principal
 - Alerta de saturação: as duas campanhas principais de vendas chegaram a frequência de 4,27 (Sul e Sudeste) e 3,95 (Brasil). Acima de 3 já é sinal de que o público está vendo os anúncios vezes demais.
 - Pior conjunto do mês: a campanha sem catálogo no Sul e Sudeste investiu R$ 300,49 e trouxe 1 compra (R$ 300,49, com R$ 32,87 em vendas). Já está pausada.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal (espinha dorsal): compras no site (e-commerce, pixel), somando 5 campanhas de vendas: 34 compras, R$ 2.117,14 investidos, custo médio R$ 62,27 por compra, R$ 4.810,09 em vendas registradas (ROAS 2,27). Apoio: campanha de tráfego da live de 14/09 (4.953 cliques no link, R$ 355,79, pausada) e uma campanha de alcance da live de 07/08 (R$ 19,62, sem resultado comparável). Investimento total da conta: R$ 2.492,55. Indicadores diferentes não foram somados; os recortes abaixo consideram só as campanhas de vendas.
+
 
 - Validação: compras por gênero (31+2+1), idade (2+2+12+15+1+2) e plataforma (28+6) fecham em 34; investimento fecha em R$ 2.117,14 nos 3 recortes. Carrinhos: 1.493 (adsets) = gênero (1.416+72+5). Checkouts: 96 = 93+2+1. Recortes com "Not available" (campanhas sem compra) tratados como zero.
 - Volume fraco: homens (2 compras), 25-34 (2), 55+ (3), Facebook (6), catálogo (2) e CLTV SP (2). Leituras direcionais. As diferenças 48,97 vs 60,21 (23%) e 58-61 vs 149 (25-34) passam do limite de 15%, mas a base é pequena (12-17 compras).

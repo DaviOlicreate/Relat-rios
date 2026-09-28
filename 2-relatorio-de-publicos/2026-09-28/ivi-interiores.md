@@ -1,10 +1,9 @@
 # Ivi Interiores — Relatório de Públicos (últimos 30 dias)
 Conta: 484404834087570 | Gerado em 2026-09-28
 
-Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp (1 campanha, 180 mensagens, R$ 2.196,91, R$ 12,21 cada). Apoio: campanha de lembrança de anúncio (1.730 pessoas com estimativa de lembrança, R$ 210,41, R$ 0,12 cada) e campanha de visualização de vídeo (3.352 ThruPlays, R$ 210,12, R$ 0,06 cada). Indicadores diferentes não foram somados. Investimento total da conta: R$ 2.617,44.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -36,7 +35,15 @@ Faixa Etária Principal
 - Pior conjunto do mês: o teste da campanha antiga (28 a 60 anos, aberto) fez 17 mensagens a R$ 25,17 com R$ 427,87, mais de 3 vezes o custo do campeão.
 - Em reconhecimento de marca: lembrança de anúncio para alta renda, de 28 a 60 anos nos bairros (1.730 pessoas com lembrança, R$ 0,12 cada) e vídeo (3.352 vídeos assistidos até o fim, R$ 0,06 cada).
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp (1 campanha, 180 mensagens, R$ 2.196,91, R$ 12,21 cada). Apoio: campanha de lembrança de anúncio (1.730 pessoas com estimativa de lembrança, R$ 210,41, R$ 0,12 cada) e campanha de visualização de vídeo (3.352 ThruPlays, R$ 210,12, R$ 0,06 cada). Indicadores diferentes não foram somados. Investimento total da conta: R$ 2.617,44.
+
 
 - Validação: mensagens por gênero (130+50+0), idade (5+30+72+43+16+14), plataforma (42+132+6) e conjunto (56+36+71+17) fecham em 180; investimento fecha em R$ 2.196,91. Recortes "Not available" (gênero desconhecido R$ 15,55 e idade desconhecida R$ 5,10) tratados como zero resultado.
 - Volume fraco: 18-24 (5 mensagens), 65+ (14), 55-64 (16), WhatsApp (6). Direcional. A diferença 8,27 vs 10,61 (22%) passa do limite de 15%, mas os dois conjuntos diferem em mais de uma variável (faixa etária, tipo de criativo), então não é um A/B limpo. O comparativo "arquitetos aberto" (R$ 16,32) vs "interesses+bairros" (R$ 8,27) também difere em segmentação e criativo.

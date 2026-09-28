@@ -1,10 +1,9 @@
 # Go Games Jacarepaguá — Relatório de Públicos (últimos 30 dias)
 Conta: 524247290166854 | Gerado em 2026-09-28
 
-Duas frentes rodando, com indicadores diferentes (não somados): mensagens iniciadas (campanha de mensagens, R$ 1.402,12, 274 mensagens, R$ 5,12 cada) e leads no site pelo pixel (campanha de conversão do site, R$ 1.228,57, 230 leads, R$ 5,34 cada). Investimento total da conta: R$ 2.630,69. Mensagens é a espinha dorsal (maior investimento); leads do site entra como apoio.
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -34,7 +33,15 @@ Faixa Etária Principal
 - Alerta: a frequência das mensagens está em 3,00, no limite de saturação (a do site está em 2,61). Precisamos renovar os criativos para o público não cansar.
 - Pior conjunto do mês: uma cópia do conjunto de mensagens gastou R$ 168,13 e trouxe 19 mensagens a R$ 8,85, quase o dobro do original. Ela está pausada, e o caminho é manter a verba no conjunto principal.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Duas frentes rodando, com indicadores diferentes (não somados): mensagens iniciadas (campanha de mensagens, R$ 1.402,12, 274 mensagens, R$ 5,12 cada) e leads no site pelo pixel (campanha de conversão do site, R$ 1.228,57, 230 leads, R$ 5,34 cada). Investimento total da conta: R$ 2.630,69. Mensagens é a espinha dorsal (maior investimento); leads do site entra como apoio.
+
 
 - Validação: por gênero, idade e plataforma, as mensagens somam 274 e os leads somam 230, fechando com o total de cada campanha. Investimento por gênero fecha em R$ 1.402,12 (mensagens) e R$ 1.228,57 (leads). Meta devolve "Not available" para faixas/plataformas sem resultado (55-64 no site com R$ 2,99; Threads com R$ 5,14): tratado como zero resultado, sem estimar.
 - Volume fraco para conclusão: homens (9 leads, 16 mensagens), Facebook no site (11 leads), 18-24 e 55-64 (1 lead / 0). Leituras direcionais. A diferença 4,86/4,87 vs 5,83 no site (~17-20%) passa do limite de 15%, mas a base ainda é de 94-104 leads: boa para teste, não para decisão de corte.

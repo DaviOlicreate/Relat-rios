@@ -1,10 +1,9 @@
 # Stylus Concept — Relatório de Públicos (últimos 30 dias)
 Conta: 1667130234603449 | Gerado em 2026-09-28
 
-Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp, somando 2 campanhas (63 mensagens, R$ 681,07, custo médio R$ 10,81). A campanha de vendas ("leg_vendas mensagens_morno") otimiza por conversas, e por isso o resultado dela entra como mensagens (32 mensagens no nível do conjunto de anúncios); no nível campanha, o Meta devolve "mixed", então os recortes por idade/plataforma dessa campanha estão com "Dado não disponível" para resultado. Apoio: campanha de tráfego para o Instagram (614 visitas ao perfil, R$ 241,67, R$ 0,39 cada). Investimento total da conta: R$ 922,74. Compras: Dado não disponível (nenhum evento de compra retornado).
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
-## PARTE 1 — Mensagem pronta para o cliente
-
+```
 Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias:
 
 👥 Perfil Demográfico
@@ -33,7 +32,15 @@ Faixa Etária Principal
 - Tráfego para o Instagram: o público de 25 a 65 anos, semelhante aos clientes num raio de 20 km de Guanambi, fez 614 visitas ao perfil a R$ 0,39 (R$ 241,67), com frequência de 2,77 e CTR de 1,44%.
 - Nenhum conjunto ficou sem resultado, mas os custos por mensagem (R$ 10,70 a R$ 10,92) estão altos e o público está saturado. O caminho é renovar criativos e ampliar a região.
 
-## PARTE 2 — Notas internas (NÃO enviar ao cliente)
+Qualquer dúvida, tô à disposição.
+```
+
+---
+
+## ANÁLISE INTERNA (não enviar)
+
+Resultado principal (espinha dorsal): mensagens iniciadas no WhatsApp, somando 2 campanhas (63 mensagens, R$ 681,07, custo médio R$ 10,81). A campanha de vendas ("leg_vendas mensagens_morno") otimiza por conversas, e por isso o resultado dela entra como mensagens (32 mensagens no nível do conjunto de anúncios); no nível campanha, o Meta devolve "mixed", então os recortes por idade/plataforma dessa campanha estão com "Dado não disponível" para resultado. Apoio: campanha de tráfego para o Instagram (614 visitas ao perfil, R$ 241,67, R$ 0,39 cada). Investimento total da conta: R$ 922,74. Compras: Dado não disponível (nenhum evento de compra retornado).
+
 
 - Validação: mensagens (campanha de engajamento) por idade (4+15+12) e por plataforma (7+24) fecham em 31; investimento fecha em R$ 331,66. Visitas ao perfil por idade (209+187+143+67+8) e plataforma (119+495) fecham em 614. Campanha "leg_vendas mensagens_morno" retorna "mixed" por breakdown; os 32 resultados só existem no nível conjunto de anúncios. Não somei resultados por idade/plataforma dessa campanha.
 - Objetivo desalinhado: campanha com objetivo OUTCOME_SALES otimizando "CONVERSATIONS" (mensagens), sem eventos de compra ou carrinho retornados (omni_purchase vazio). Se a intenção é vender, falta rastreamento de compra (ex.: marcar venda no WhatsApp via API de conversões) ou trocar o objetivo para mensagens. Meta também recomenda mensagens via API/parceiro em outras contas.
