@@ -2,7 +2,7 @@
 
 ```
 Oi pessoal, tudo bem?
-Na Biblioteca de Anúncios, o "esquenta" de Black Friday de semijoias já começou: PontoK e Impressionata estão no ar desde 16/10. Outra loja usa grupo fechado para captar clientes, e o seu Grupo VIP já está montado. Podemos usar o grupo para acesso antecipado.
+Na Biblioteca de Anúncios, o "esquenta" de Black Friday de semijoias já começou: PontoK e Impressionata estão no ar desde 15 e 16/10. Outra loja usa grupo fechado para captar clientes, e o seu Grupo VIP já está montado. Podemos usar o grupo para acesso antecipado.
 Qualquer dúvida, tô à disposição.
 ```
 

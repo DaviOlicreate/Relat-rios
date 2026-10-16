@@ -2,7 +2,7 @@
 
 ```
 Oi pessoal, tudo bem?
-Olhei os anúncios de estética e harmonização em Belo Horizonte. Várias profissionais usam "Paciente Modelo" e chamadas genéricas como "Converse conosco". Pelo menos um anunciante de estética já tem peça de Black Friday no ar desde 16/10. Vamos conversar sobre a condição de vocês para a data.
+Olhei os anúncios de estética e harmonização em Belo Horizonte. Várias profissionais usam "Paciente Modelo" e chamadas genéricas como "Converse conosco". Pelo menos um anunciante de estética já tem peça de Black Friday no ar desde 15/10. Vamos conversar sobre a condição de vocês para a data.
 Qualquer dúvida, tô à disposição.
 ```
 
