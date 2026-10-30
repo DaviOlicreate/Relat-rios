@@ -2,8 +2,6 @@
 
 Janela atual: 22/10 a 28/10 (7 dias). Comparação: 15/10 a 21/10 (7 dias). Fonte: Meta Ads (MCP), nível campanha, dados puxados em 30/10/2026 (lote complementar ao de 29/10).
 
-> **VERIFICAR ANTES DE ENVIAR:** confirme se a conta 1438944255961926 é mesmo a LRM do Rodrigo.
-
 ## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
 ```
@@ -32,7 +30,7 @@ Gostaria de saber de vocês se já chegou alguma conversa pelo WhatsApp e como f
 ## ANÁLISE INTERNA (não enviar)
 
 ### Identificação da conta
-- Você pediu "LRM, que é do Rodrigo", e essa conta **não está na tabela do portfólio**. A única conta acessível ligada a um Rodrigo é a **1438944255961926** (BM "Rodrigo de Mesquita", sem nome de conta). Usei essa. **Confirme se é a LRM** e, se for, adicione-a à tabela do CLAUDE.md.
+- Conta **1438944255961926** (BM "Rodrigo de Mesquita"), confirmada pelo Davi em 30/10 e adicionada ao portfólio no CLAUDE.md.
 
 ### Dados
 - Só existe uma campanha com gasto: **[LEGADO][MENSAGENS][ORTODONTIA] 27.10** (ACTIVE), com R$ 63,13, 5.005 impressões, 32 cliques, CTR de 0,64%, CPM de R$ 12,61 e **1 mensagem iniciada (R$ 63,13)**.

@@ -49,4 +49,3 @@ Gostaria de saber de vocês qual foi a percepção referente ao desempenho na se
 ### Notas técnicas
 - **As 17 mensagens da campanha de recrutamento de recepcionista não entraram como contato**, porque são candidatas a vaga e não clientes. O volume de comparação é 142, e não 159. O custo por contato anterior usa o investimento total da semana: R$ 344,10 ÷ 142 = R$ 2,42. Versão limpa (só captação): R$ 3,72 contra R$ 2,33.
 - O investimento subiu 19,2% (R$ 344,10 para R$ 410,06).
-- A conta **CA02 – Thabata Montanari (1353970982008261)** também é acessível, mas não teve gasto em nenhuma das duas janelas. Ela não está na tabela do portfólio.

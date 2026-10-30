@@ -12,10 +12,10 @@ Lote 1 (29/10): São Luiz, Go Games (as duas), Lavdent, Mazulli, Ivi, Stylus, La
 | Mazulli Arte | R$ 480,29 | +13,2% | 4 compras | -55,6% | R$ 120,07 | +154,7% | ROAS 2,77 depende de 1 pedido de R$ 841; feed barato e de baixa intenção |
 | CA01 – Thabata Montanari | R$ 410,06 | +19,2% | 110 contatos | -22,5% | R$ 3,73 | +53,8% | Captação cansou; campanha nova em 28/10 |
 | Camila Relva | R$ 424,34 | +3,7% | 4.796 visitas ao perfil | +0,1% | R$ 0,09 | +3,6% | Estável; nenhuma campanha de contato ativa |
-| Vania Lopes Semijoias | R$ 288,05 | -19,7% | 17 contatos | -29,2% | R$ 16,94 (limpo R$ 9,56) | +13,4% | Pausada por você em 27/10 |
+| Vania Lopes Semijoias | R$ 288,05 | -19,7% | 17 contatos | -29,2% | R$ 16,94 (limpo R$ 9,56) | +13,4% | Pausada em 27/10 (cliente ciente) |
 | Carine Rech | R$ 364,42 | -11,1% | 24 leads (form) | -14,3% | R$ 15,18 | +3,8% | Estável |
 | La Belle Eclair | R$ 1.866,89 | -38,4% | 370 contatos | -35,0% | R$ 5,05 | -5,3% | Custo melhorou; campanha Dra. Ana Castro pausada |
-| LRM (Rodrigo), conta 1438944255961926 | R$ 63,13 | n/c | 1 contato | n/c | R$ 63,13 | n/c | Começou em 27/10; confirmar a conta |
+| LRM (Rodrigo de Mesquita) | R$ 63,13 | n/c | 1 contato | n/c | R$ 63,13 | n/c | Começou em 27/10 |
 | Ivi Interiores | R$ 0,00 | n/c | Dado não disponível | n/c | Dado não disponível | n/c | Campanha nova criada em 20/10 e nunca ativada |
 | Stylus Concept | R$ 0,00 | n/c | Dado não disponível | n/c | Dado não disponível | n/c | Pausada desde 09/10 |
 | CA – La Onda Moda Playa | Dado não disponível | n/c | Dado não disponível | n/c | Dado não disponível | n/c | Acesso perdido |
@@ -29,5 +29,5 @@ Lote 1 (29/10): São Luiz, Go Games (as duas), Lavdent, Mazulli, Ivi, Stylus, La
 6. **La Belle:** o Meta deu nota de fadiga de 0,37 ao conjunto "[CA02][JESSICA][MENSAGEM] — Cópia". Preparar criativos novos. Confirmar por que a campanha Dra. Ana Castro (melhor custo, R$ 4,47) foi pausada.
 7. **Go Games (as duas contas):** fadiga provável nas campanhas de mensagens; o investimento caiu entre 16% e 18,5%.
 8. **Camila Relva:** a campanha de WhatsApp está PAUSED, mas gastou R$ 4,56 sem clique. Hoje a conta não tem campanha de contato.
-9. **LRM:** confirmar se a conta 1438944255961926 é a do Rodrigo e incluí-la no CLAUDE.md. CTR de 0,64% no início.
-10. **Vania e Stylus:** contas pausadas. Confirmar com os clientes.
+9. **LRM:** CTR de 0,64% no início. Se seguir abaixo de 1%, revisar criativo e copy.
+10. **Stylus:** pausada desde 09/10. Confirmar com o cliente. (Vania: pausa já combinada.)

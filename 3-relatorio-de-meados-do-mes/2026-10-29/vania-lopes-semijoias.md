@@ -2,8 +2,6 @@
 
 Janela atual: 22/10 a 28/10 (7 dias). Comparação: 15/10 a 21/10 (7 dias). Fonte: Meta Ads (MCP), nível campanha, dados puxados em 30/10/2026 (lote complementar ao de 29/10).
 
-> **VERIFICAR ANTES DE ENVIAR:** a mensagem informa que as campanhas foram pausadas em 27/10. Confirme se a cliente está ciente.
-
 ## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
 ```
@@ -36,7 +34,7 @@ Gostaria de saber de vocês qual foi a percepção referente ao desempenho na se
 ## ANÁLISE INTERNA (não enviar)
 
 ### O que aconteceu
-- **Em 27/10, às 16h30, você pausou as 3 campanhas** ([LEGADO][MENSAGENS] 16.06, [LEGADO][GRUPO VIP] e [LEGADO][SEGUIDORES] 16.06). O gasto ficou zerado em 28/10 e 29/10. A conta está parada agora. Confirme se a pausa foi combinada com a cliente, porque a mensagem fala dela.
+- **Em 27/10, às 16h30, você pausou as 3 campanhas** ([LEGADO][MENSAGENS] 16.06, [LEGADO][GRUPO VIP] e [LEGADO][SEGUIDORES] 16.06). O gasto ficou zerado em 28/10 e 29/10. A conta está parada agora. A cliente sabe da pausa (confirmado pelo Davi em 30/10).
 
 ### Composição (indicadores separados)
 

@@ -47,6 +47,7 @@ Use somente estas contas. Se eu pedir um relatório de um cliente fora desta lis
 | Camila Relva | 3052388261661892 |
 | Vania Lopes Semijoias | 575043674443649 |
 | La Belle Eclair | 1721564224969776 |
+| LRM (Rodrigo de Mesquita) | 1438944255961926 |
 
 ---
 
