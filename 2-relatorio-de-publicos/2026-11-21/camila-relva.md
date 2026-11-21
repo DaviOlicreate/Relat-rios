@@ -19,10 +19,12 @@ Oii, pessoal! Tudo bem? Segue nosso relatório de públicos dos últimos 30 dias
 
 Faixa Etária Principal
 ━━━━━━━━━━━━━
-- 65 anos ou mais é a faixa dominante: 6.815 visitas (33,2% do total) com R$ 595,91 (34,1% da verba), a R$ 0,09 cada
-- 55 a 64 anos trouxe 5.003 visitas (R$ 431,25) e 45 a 54 anos trouxe 4.701 visitas (R$ 391,99), ambas entre R$ 0,08 e R$ 0,09
-- De 25 a 44 anos foram 3.865 visitas com R$ 314,57
-- Descoberta do mês: o custo por visita é praticamente igual em todas as idades (de R$ 0,08 a R$ 0,09), mas a Meta concentra a verba em quem tem 55 anos ou mais (58,8% da verba e 57,5% das visitas), porque é onde ela encontra mais gente disposta a clicar
+- O público entre 25 e 54 anos já responde muito bem: 8.566 visitas ao perfil (41,7% do total) com R$ 706,56 investidos (40,5% da verba), a R$ 0,08 cada
+- 35 a 44 anos teve o custo mais baixo da conta: 2.648 visitas com R$ 214,31, a R$ 0,08 cada
+- 45 a 54 anos foi a faixa de maior volume dentro desse grupo: 4.701 visitas com R$ 391,99, também a R$ 0,08
+- 25 a 34 anos trouxe 1.217 visitas com R$ 100,26, no mesmo custo de R$ 0,08, mesmo recebendo bem menos verba
+- 18 a 24 anos recebeu só R$ 11,70 (128 visitas), volume pequeno demais para tirar conclusão
+- Descoberta do mês: o público mais jovem custa o mesmo que o restante, mas ainda fica com menos da metade da verba, porque hoje a Meta distribui sozinha. Ou seja, dá para crescer nesse público sem pagar mais caro por isso
 
 📱 Plataformas
 ━━━━━━━━━━━━━
@@ -34,7 +36,7 @@ Faixa Etária Principal
 ━━━━━━━━━━━━━
 - Campeão de custo e de volume: público aberto + interesses, com 20.545 visitas ao perfil a R$ 0,08 (R$ 1.745,48), mantendo o mesmo custo do relatório anterior
 - Campanha de WhatsApp para quem já assistiu aos vídeos: R$ 4,56 investidos, só 12 pessoas alcançadas e nenhuma conversa. O público ficou pequeno demais para entregar, e ela segue pausada
-- Próximo passo: abrir um segundo público para comparar com o atual (por exemplo, focado em 35 a 54 anos) e retomar o WhatsApp com um público maior de pessoas que já interagiram com o perfil
+- Próximo passo: abrir um segundo público focado em 25 a 54 anos, para concentrar a verba no público principal da marca e comparar com o atual, e retomar o WhatsApp com um público maior de pessoas que já interagiram com o perfil
 
 Qualquer dúvida, tô à disposição.
 ```
@@ -50,4 +52,5 @@ Qualquer dúvida, tô à disposição.
 - Sinal de métrica "barata demais": cliques (20.682) ≈ visitas ao perfil (20.545) e CTR de 11,40% em público aberto. A visita ao perfil está sendo contada praticamente a cada clique. Sem dado de seguidores/mensagens, não dá para afirmar que é tráfego qualificado. Próximo ciclo: puxar instagram_profile_follow_v2 e cruzar com o crescimento orgânico do perfil.
 - Desalinhamento possível: 58,8% da verba em 55+ com custos iguais entre faixas (R$ 0,081 em 35-44 x R$ 0,087 em 65+, diferença de 8%, abaixo do limite de 15%: direcional). O algoritmo vai para onde há mais volume de clique, não necessariamente onde está o cliente ideal. Confirmar com a cliente qual é o público-alvo real.
 - Frequência: conjunto de WhatsApp com 4,58 (alerta > 3,0), mas sobre só 12 pessoas e R$ 4,56; irrelevante em verba, porém confirma que o público de remarketing (view 50%) é pequeno demais. Conjunto ativo com 1,34.
+- Edição a pedido do Davi (21/11): a seção de idade da mensagem foi reescrita com foco em 25-54 anos (público real da cliente); os números de 55+ saíram da mensagem, mas seguem nas validações acima.
 - Estrutura: um único conjunto ativo na conta, sem par controlado para A/B. Próximo passo: duplicar o conjunto com faixa 35-54 ou só mulheres e comparar custo por seguidor, não por visita.
