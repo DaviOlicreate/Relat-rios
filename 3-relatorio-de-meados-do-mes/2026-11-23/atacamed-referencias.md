@@ -4,14 +4,15 @@
 
 ```
 *Fala, Renan! Tudo bem?*
-Ouvi seu áudio aqui, muito top essa técnica! Separei algumas referências pra gente gravar ainda esta semana:
+Ouvi seu áudio aqui, muito top essa técnica! Além dos vídeos que você mandou, trouxe mais algumas referências pra gente gravar ainda esta semana:
 
-*Referências:*
-1. https://www.instagram.com/reel/DVl3f6YDiJE/?evlk=dGU1MHc2cXN1OWs3
-2. https://www.instagram.com/reel/DfvFizsOvbL/?knvt=eTZvdjlmMGF6YWE5
-3. https://www.instagram.com/reel/DfQcwHVu2fI/?fqnt=YXp2eDVrd2h3enhs
-
-O que esses vídeos têm em comum: paciente real em cena, a dor aparece logo no começo ("dor no joelho") e a gente vê a reação do paciente na hora. É isso que prende a atenção.
+*Referências novas:*
+Separei anúncios que estão rodando agora de quem trabalha com agulhamento em pontos distantes da dor e com tratamento de dor crônica, pra gente ver o formato que eles estão usando:
+1. https://www.facebook.com/ads/library/?id=1142341485358677
+2. https://www.facebook.com/ads/library/?id=1812729236519783
+3. https://www.facebook.com/ads/library/?id=1174860108259519
+4. https://www.facebook.com/ads/library/?id=1471948931560723
+5. https://www.facebook.com/ads/library/?id=1522226883297032
 
 *Ideias pra gente gravar:*
 * *Vídeo 1 — "Dor no joelho... e a agulha vai no cotovelo?":* um paciente com dor no joelho, você aplica no cotovelo e ele testa o movimento na hora. Esse contraste é o que faz o vídeo viralizar.
@@ -21,6 +22,8 @@ Pra eu fechar os roteiros, só me confirma duas coisas: o nome exato da técnica
 ```
 
 ## ANÁLISE INTERNA (não enviar)
+
+**Referências novas da mensagem (Biblioteca de Anúncios do Meta, Brasil):** 1 e 2 = página "Acupuntura Distal"; 3 = Viviane Dias Laserterapia ("Existe tratamento para a dor persistente!"); 4 = Santiago Terapias Integrativas; 5 = Fisioterapia Regenerativa ("Os 4 eixos da dor crônica"). **Os criativos não foram abertos/vistos nesta sessão** — confira antes de enviar. Também apareceram vários anúncios de "Workshop Método Equilíbrio em 7 dias" (Isto é Mu - Acupuntura): o "Método do Equilíbrio" é um candidato ao nome da técnica do Dr. Renan, a confirmar com ele.
 
 Pedido do Davi em 23/11/2026, a partir da conversa no grupo "Cirúrgica Atacamed | Legado Assessoria" (prints de 21–23/11).
 
