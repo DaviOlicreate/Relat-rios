@@ -1,5 +1,27 @@
 # Cirúrgica AtacaMED — referências de conteúdo (agulhamento chinês / sangria / dor)
 
+## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
+
+```
+*Fala, Renan! Tudo bem?*
+Ouvi seu áudio aqui, muito top essa técnica! Separei algumas referências pra gente gravar ainda esta semana:
+
+*Referências:*
+1. https://www.instagram.com/reel/DVl3f6YDiJE/?evlk=dGU1MHc2cXN1OWs3
+2. https://www.instagram.com/reel/DfvFizsOvbL/?knvt=eTZvdjlmMGF6YWE5
+3. https://www.instagram.com/reel/DfQcwHVu2fI/?fqnt=YXp2eDVrd2h3enhs
+
+O que esses vídeos têm em comum: paciente real em cena, a dor aparece logo no começo ("dor no joelho") e a gente vê a reação do paciente na hora. É isso que prende a atenção.
+
+*Ideias pra gente gravar:*
+* *Vídeo 1 — "Dor no joelho... e a agulha vai no cotovelo?":* um paciente com dor no joelho, você aplica no cotovelo e ele testa o movimento na hora. Esse contraste é o que faz o vídeo viralizar.
+* *Vídeo 2 — "Não é acupuntura":* você falando direto pra câmera, de 30 a 40 segundos, explicando a diferença e por que a gente não trata o ponto da dor.
+
+Pra eu fechar os roteiros, só me confirma duas coisas: o nome exato da técnica e qual dia desta semana fica melhor pra gente gravar.
+```
+
+## ANÁLISE INTERNA (não enviar)
+
 Pedido do Davi em 23/11/2026, a partir da conversa no grupo "Cirúrgica Atacamed | Legado Assessoria" (prints de 21–23/11).
 
 ## Contexto do grupo
