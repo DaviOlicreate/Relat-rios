@@ -59,7 +59,7 @@ Atenção antes de enviar: os 2 primeiros do Top 4 (Ad 6 Rio C Feed e Ad 1 _ rio
 - Imagina o seu filho + R$ 792: R$ 19,68, 0 mensagens, CTR 0,66%. ACTIVE.
 - Abaixo de R$ 20 (direcional): Ad 2 _ rio A Feed R$ 13,33 / 2 msgs (R$ 6,67, PAUSED); Ad 7 Rio D Story R$ 12,70 / 1 (PAUSED); Festa infantil não é tudo igual R$ 8,58 / 0 (ACTIVE); Ad 7 Rio D Story — Cópia R$ 7,79 / 1 (PAUSED); Ad 3 Rio B stories R$ 3,55 / 2 (R$ 1,78, PAUSED); Ad 4 Rio b feed R$ 1,59 / 0; Ad 4 imagem R$ 0,39 / 0.
 - Ad 5 Rio C Story (campeão da semana passada: 36 msgs a R$ 6,67) teve R$ 0 no período e está PAUSED.
-- Par controlado (mesmo conjunto, mesmo público): artes estáticas "R$ 1.000" (Ad 6 + Ad 1 + Ad 2 + Ad 7 + Ad 3 = R$ 195,60, 33 msgs, ~R$ 5,93) contra vídeos "R$ 792" ativos (Você se lembra, Se o seu filho, Você está fechando, Imagina, Festa infantil = R$ 139,38, 10 msgs, ~R$ 13,94). As artes R$ 1.000 saíram ~2,3x mais baratas. Somas calculadas manualmente a partir dos dados por anúncio, mesmo indicador.
+- Par controlado (mesmo conjunto, mesmo público): artes estáticas "a partir de R$ 1.000" com oferta confirmada no preview (Ad 6 + Ad 1 = R$ 165,79, 26 msgs, ~R$ 6,38) contra os anúncios "+ R$ 792" ativos (Você se lembra, Se o seu filho, Você está fechando, Imagina, Festa infantil = R$ 139,38, 10 msgs, ~R$ 13,94). As artes R$ 1.000 saíram ~2,2x mais baratas. Somas calculadas manualmente a partir dos dados por anúncio, mesmo indicador. Os demais "Ad 2/3/4/7 Rio" provavelmente são da mesma série, mas a oferta não foi conferida no preview, então ficaram fora da conta.
 - Plataforma: Facebook R$ 59,52 / 11 msgs (R$ 5,41) vs Instagram R$ 285,00 / 31 msgs (R$ 9,19).
 - Posicionamento: feed R$ 208,09 / 28 (R$ 7,43); IG stories R$ 80,44 / 8 (R$ 10,06); IG reels R$ 36,81 / 5 (R$ 7,36); FB stories R$ 5,22 / 1; FB reels R$ 12,75 / 0.
 
@@ -76,7 +76,7 @@ Atenção antes de enviar: os 2 primeiros do Top 4 (Ad 6 Rio C Feed e Ad 1 _ rio
 
 ### Hipóteses
 - Site: a queda de 52 para 1 lead coincide com a troca de criativos (Ad 3 pausado, entrada dos Black). Mas 242 cliques no link para só 36 visualizações de página indica possível problema na página (carregamento lento, link quebrado, página alterada) ou no pixel/evento de lead. É preciso testar o site e o evento Lead no Gerenciador de Eventos antes de culpar o criativo. Não verificado nesta rotina.
-- Mensagens: o encarecimento (+25%) parece vir da mudança de mix: os dois anúncios mais eficientes (artes R$ 1.000) estão pausados agora e o que segue ativo são os vídeos R$ 792, que converteram ~2,3x pior no mesmo conjunto. Se as artes foram pausadas no meio da semana, a próxima semana tende a ficar mais cara ainda.
+- Mensagens: o encarecimento (+25%) parece vir da mudança de mix: os dois anúncios mais eficientes (artes R$ 1.000) estão pausados agora e o que segue ativo são os vídeos R$ 792, que converteram ~2,2x pior no mesmo conjunto. Se as artes foram pausadas no meio da semana, a próxima semana tende a ficar mais cara ainda.
 - A oferta "a partir de R$ 1.000 em 5x" (preço maior, mas com parcelamento e comparativo) converteu melhor que "R$ 792": hipótese de que a comparação explícita com a concorrência e o parcelamento pesam mais que o preço cheio menor.
 - Facebook mais barato que Instagram por mensagem (R$ 5,41 vs R$ 9,19), mas com 11 mensagens apenas: leitura direcional.
 
