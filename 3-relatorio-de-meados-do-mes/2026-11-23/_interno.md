@@ -14,7 +14,7 @@ Contas pedidas: Go Games (Goiânia e Jacarepaguá), AtacaMED, LRM, Thabata Monta
 | Thabata Montanari | R$ 418,34 (+81,1%) | 68 (+54,5%) | R$ 6,15 | +17,2% | Escala ok — confirmar aumento de verba |
 
 ## Alertas, por urgência
-1. **Go Games Jacarepaguá — campanha do site sem leads desde 17/11** (R$ 194,52 e 327 cliques sem lead; visualizações de página também sumiram). Provável pixel quebrado. Ação: checar Gerenciador de Eventos/Pixel Helper hoje; pausar a campanha até corrigir.
+1. **Go Games Jacarepaguá — campanha do site sem leads desde 17/11** (R$ 194,52 e 327 cliques sem lead; visualizações de página também sumiram). Davi já ajustou o site (imagem do Hero); falta checar o Pixel no Gerenciador de Eventos/Pixel Helper. Pausar a campanha se o Pixel estiver quebrado.
 2. **Go Games Goiânia — [LEGADO] encarecendo há 4 semanas** (R$ 6,98 → R$ 11,06). Ação: aplicar a redução de verba sugerida em 16/11 e subir criativos novos.
 3. **Thabata — verba +81% sem causa registrada.** Ação: confirmar que foi combinado.
 4. **AtacaMED — campanha de Fisioterapia (raio 7 km) a R$ 23,43 por conversa**, artes estáticas sem nenhuma conversa. Ação: pausar artes, testar vídeo/raio maior.
@@ -22,4 +22,4 @@ Contas pedidas: Go Games (Goiânia e Jacarepaguá), AtacaMED, LRM, Thabata Monta
 
 ## Extra
 - Referências de conteúdo para a AtacaMED (técnica de sangria): `atacamed-referencias.md`.
-- O áudio do Dr. Renan (21/11) não foi transcrito nesta sessão.
+- Transcrição do áudio do Dr. Renan (21/11) incluída em `atacamed-referencias.md`. Nome exato da técnica ainda pendente (áudio de 2:04 de hoje).

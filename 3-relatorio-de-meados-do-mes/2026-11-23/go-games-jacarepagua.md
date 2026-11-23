@@ -2,7 +2,7 @@
 
 Janela atual: 16/11 a 22/11 (7 dias). Comparação: 09/11 a 15/11 (7 dias). Fonte: Meta Ads (MCP), nível campanha, dados puxados em 23/11/2026.
 
-> **VERIFICAR ANTES DE ENVIAR:** a campanha de conversão do site **parou de registrar leads a partir de 17/11** (só 1 lead na semana, contra 23 na anterior). A campanha continuou recebendo cliques normalmente (406 contra 397), mas as visualizações da página de destino também sumiram no mesmo dia (35 em 16/11, depois nulo/1). Isso aponta para **pixel/site parado de disparar**, não para queda real de interesse. Confira o site e o pixel antes de mandar a mensagem — se o problema for confirmado, a mensagem já está escrita assumindo isso.
+> **SITUAÇÃO (23/11):** a campanha de conversão do site **parou de registrar leads a partir de 17/11** (só 1 lead na semana, contra 23 na anterior), mesmo com cliques normais (406 contra 397); as visualizações da página de destino sumiram no mesmo dia. O Davi já fez ajustes no site (troca da imagem do Hero). Falta checar o Pixel no Gerenciador de Eventos / Pixel Helper para confirmar se é contagem ou outra causa. A mensagem abaixo já traz esse contexto ao cliente.
 
 ## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
@@ -26,7 +26,7 @@ Pessoal, estou enviando aqui o relatório dos últimos 7 dias de campanhas (16/1
 
 💡 Comentários:
 
-Investimos R$ 568,46 esta semana e geramos 43 contatos, com custo médio de R$ 13,22 cada. A queda veio quase toda dos cadastros pelo site, que pararam de ser registrados a partir do dia 17 mesmo com a campanha recebendo cliques normalmente, o que indica um problema na contagem do site que já estamos corrigindo; no WhatsApp foram 42 conversas e o anúncio ficou 7,5% mais barato para aparecer.
+Investimos R$ 568,46 esta semana e geramos 43 contatos, com custo médio de R$ 13,22 cada. No WhatsApp foram 42 conversas; já os cadastros pelo site deixaram de aparecer nos dados a partir do dia 17, mesmo com a campanha recebendo cliques normalmente. Já fiz alguns ajustes no site, incluindo a troca da imagem principal da página, e agora estou verificando o Pixel (a ferramenta que registra os cadastros do site). O custo por contato subiu nesta semana e estou examinando para saber se é de fato o Pixel ou se pode ser outra coisa.
 
 Vamos continuar monitorando a qualidade e ajustando as campanhas para melhorar a performance, sempre com o objetivo de escalar os resultados.
 
@@ -63,7 +63,9 @@ Gostaria de saber de vocês qual foi a percepção referente ao desempenho na se
 
 ### Leitura
 - **Fato:** desde 17/11 a campanha do site gastou R$ 194,52 e gerou 327 cliques sem nenhum lead e praticamente nenhuma visualização de página registrada. Os dois eventos sumiram juntos, o que é típico de pixel removido/quebrado (site novo, troca de tema, domínio, consentimento de cookies). **Hipótese forte, a confirmar no Gerenciador de Eventos.**
-- **Ação imediata:** abrir o site, testar com o Meta Pixel Helper e checar o Gerenciador de Eventos. Enquanto não corrigir, a campanha otimiza "às cegas" — considere pausar.
+- **Feito (Davi, 23/11):** ajustes no site, incluindo troca da imagem do Hero.
+- **Pendente:** testar com o Meta Pixel Helper e checar o Gerenciador de Eventos (evento Lead e PageView). Enquanto não corrigir, a campanha otimiza "às cegas" — considere pausar.
+- Na mensagem ao cliente, o custo é citado sem tom de problema, a pedido do Davi (alta de custo = em análise: Pixel ou outra causa).
 - **Fato:** dias 11/11 e 20/11 com gasto zero na campanha do site (possível programação ou limite). Verificar.
 - **Fato:** a campanha de mensagens piorou: 55 → 42 conversas, custo R$ 6,41 → R$ 8,20 (+27,9%), CTR 2,07% → 1,73%. Sinal de desgaste de criativo.
 - Custo por contato da conta sem o site: R$ 8,20 (só mensagens).

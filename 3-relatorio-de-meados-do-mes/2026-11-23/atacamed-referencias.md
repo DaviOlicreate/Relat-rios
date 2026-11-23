@@ -1,11 +1,20 @@
-# Cirúrgica AtacaMED — referências de conteúdo (técnica de sangria / dor)
+# Cirúrgica AtacaMED — referências de conteúdo (agulhamento chinês / sangria / dor)
 
 Pedido do Davi em 23/11/2026, a partir da conversa no grupo "Cirúrgica Atacamed | Legado Assessoria" (prints de 21–23/11).
 
 ## Contexto do grupo
 - Dr. Renan enviou um áudio de 1:12 (21/11, 14:05) sobre um procedimento que o Davi não conhecia, e depois mandou dois reels do Dr. Felipe Mucarbel (acupuntura) com o comentário: **"Técnica de sangria gera muito engajamento"**.
 - Davi pediu hoje o **nome exato da técnica**; o Dr. Renan respondeu com um novo áudio de 2:04 (11:02).
-- **O áudio enviado aqui não pôde ser transcrito nesta sessão** (sem ferramenta de transcrição disponível). Antes de roteirizar, confirme pelo áudio qual técnica exata ele quer (sangria em acupuntura, microssangria, ventosa com sangria etc.) e quem vai executar no vídeo.
+
+## Transcrição do áudio do Dr. Renan (21/11, 14:05, 1:12)
+
+> "Fala, Davi! Boa tarde, tudo bem? Davi, desculpa aí a demora a responder, mas é que eu tô o final de semana fazendo um curso. Aqui, inclusive, são novidades que eu vou tá trazendo aí pros atendimentos, pra parte da clínica, então um trabalho com agulhas aí, de agulhamento, não é acupuntura, é uma outra técnica chinesa, uma terapia chinesa, mas diferente da acupuntura. O alívio de dor é imediato, é na hora, e a gente não estimula o ponto local. Vai estimular outros pontos: dor no joelho vai abordar lá no cotovelo, e a resposta é imediata, cara. É sensacional! E é algo que, assim, pra fazer vídeo viraliza demais. Então tô nesse movimento aqui pra gente até trazer esses conteúdos aí pra gente alinhar algumas coisas aí. Beleza? Mas essa semana dá sim pra fazer alguma coisa, a gente até se programa certinho, mas dá pra ajeitar alguma coisa sim."
+
+**O que tirar daí:**
+- A técnica é de **agulhamento chinês em pontos distantes da dor** (dor no joelho tratada no cotovelo), com **resposta imediata** — o "efeito surpresa" que viraliza.
+- Ele diz que **não é acupuntura**; o nome exato ainda não foi confirmado (o áudio de 2:04 de hoje, 11:02, provavelmente responde — não foi transcrito aqui). A descrição lembra técnicas de pontos distais (como as que a página "Acupuntura Distal" anuncia, link abaixo), mas **não usar nenhum nome no vídeo antes da confirmação dele**.
+- Ele confirmou que **dá para gravar algo ainda esta semana**.
+- Junto com isso ele indicou a **sangria** (reels do Dr. Felipe Mucarbel) como conteúdo que "gera muito engajamento".
 
 ## Referências enviadas pelo Davi
 1. https://www.instagram.com/reel/DVl3f6YDiJE/?evlk=dGU1MHc2cXN1OWs3
@@ -37,10 +46,10 @@ Links para abrir e ver o criativo. Não analisei o conteúdo visual de cada um �
 ## Ideias de vídeo para a AtacaMED (para validar com o Dr. Renan)
 Base: na conta, **vídeo vertical está ganhando de arte estática** (vídeo da termografia: 89 conversas a R$ 3,31; artes de fisioterapia: R$ 34 sem conversa).
 
-1. **"Dor no joelho que não passa?"** — gancho com a dor em texto grande, paciente real chegando com dificuldade, Dr. Renan explica a técnica em 1 frase, paciente andando depois. CTA: "chama no WhatsApp para avaliar o seu caso".
-2. **"O que é [nome da técnica] e por que pouca gente conhece"** — Dr. Renan direto para a câmera, 30–40s, desmistificando (o próprio Davi disse que nunca tinha ouvido falar — é o gancho de curiosidade).
+1. **"Dor no joelho... e a agulha vai no cotovelo?"** — gancho de curiosidade com o paradoxo em texto grande. Paciente real chegando com dor no joelho, Dr. Renan aplica no cotovelo, paciente testa o movimento na hora. É exatamente o formato que ele descreveu como viral. CTA: "chama no WhatsApp para avaliar o seu caso".
+2. **"Não é acupuntura"** — Dr. Renan direto para a câmera, 30–40s, explicando a diferença e por que não se trata o ponto da dor (o próprio Davi disse que nunca tinha ouvido falar — esse é o gancho).
 3. **Termografia + técnica** — mostrar a imagem térmica da região inflamada antes e a explicação do tratamento, aproveitando o criativo que já é o campeão da conta.
 
 ## Cuidados antes de gravar
-- Promessas como "alívio imediato" e imagens de antes/depois podem ser barradas pela política de saúde do Meta e pelas regras de publicidade do conselho profissional de quem executa a técnica. Confirmar com o Dr. Renan quem aparece executando e o registro profissional.
+- O próprio Dr. Renan fala em "alívio imediato" — no anúncio, prefira mostrar a reação do paciente a escrever a promessa. Promessas como "alívio imediato" e imagens de antes/depois podem ser barradas pela política de saúde do Meta e pelas regras de publicidade do conselho profissional de quem executa a técnica. Confirmar com o Dr. Renan quem aparece executando e o registro profissional.
 - Sangue em cena pode reduzir entrega ou reprovar o anúncio — preferir mostrar o resultado/explicação e não o procedimento em close.
