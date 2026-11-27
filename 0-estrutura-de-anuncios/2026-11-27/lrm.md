@@ -1,7 +1,7 @@
 ## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
 
 ```
-Oii, pessoal! Tudo bem? Segue como está hoje a estrutura dos seus anúncios:
+Oii, Rodrigo! Tudo bem? Segue como está hoje a estrutura dos seus anúncios:
 
 📋 Campanhas ativas
 ━━━━━━━━━━━━━
