@@ -38,9 +38,7 @@ Entre os vídeos de Black Friday que subiram no dia 25, o *"Com quantos anos voc
 https://business.facebook.com/ads/api/preview_iframe.php?d=AQI04xcDfzZQ1sjAEir01jqmqfR3SK30OB8A59AvUt3NOqJQWRa8dcgvu4WgZxC8OB_AJB1o4NPhtOiyzKK9BbE9TC7wOpw69bF5xvN1WG6XNhesS_Cly3WpSswip_SqDDVTbyoXAY3hQB4EgGPY__ah4p3S_UxYy7QmqrqnnlwyR68mb9EOKsT3pB4o72ND5sTgomYcc4aOJCemCfNTre54-bB1ROy4TQypns58-D7Lkw&amp;t=AQKSjX_d3cqnrB9rAfw
 
 *2. Seguidores / visitas ao perfil* (R$ 66,15 investidos, 1.283 visitas a R$ 0,05 cada)
-O carrossel *"Nota de repúdio"* foi o criativo mais eficiente da conta: 848 visitas ao perfil a R$ 0,05 cada, e de cada 100 pessoas que viram, 7 clicaram.
-https://business.facebook.com/ads/api/preview_iframe.php?d=AQKYGWgzhxfPal0UsVaG3SaGMTDmfPnZGbxu9GiXp2b7Oc7ffYdmJiWSEWIZAcHLCCpZSsITUyzLrEuCIeq9C2kHVwHmCRRnIhL_1mtcby8H1W_LtroksPaul5k72E132e4-iedDNTSI9cS4-H1oBeOAxb60nXqByx12y6FXpXgEFMh-FDnlTpj3iu79t-eoVPVH6vsWWiKv4ILhj24WQSGKluoH6ZwlKoG8zHGOvW-pWA&amp;t=AQIyg6_LzVaTzrZ4dc8
-O vídeo *"Quando tentam me derrubar"* veio logo atrás, com 278 visitas a R$ 0,06 cada.
+O vídeo *"Quando tentam me derrubar"*, com a equipe na loja, foi um dos destaques: 278 visitas ao perfil a R$ 0,06 cada, e de cada 100 pessoas que viram, quase 7 clicaram.
 https://business.facebook.com/ads/api/preview_iframe.php?d=AQIBA8RGza3rq4JIX9ZyuPXLbLEt9ELoLiNySpDBGIxlcs1RvwXp4Zzc_q94Q2nuDWmRV0LuyqE2LXgkRhi_GNBtIanTPwZagCTVLuLr9cY4nYQmHCzMZodLLj16QbuKi_Wy_sAJ4NvFDFBWn9owcuH96YUz2wGPrPhPQE4boGilEmV9MmIgZvce8ohkq3OuHvvKs_A5XOR6H8Aw0sVa9QUUP0wTfOKEwRFEu3b4xuaGyw&amp;t=AQIdXA8Mlw9Dtohdq8E
 
 *3. Perfil institucional + ofertas da semana* (R$ 142,04 investidos, 459 visitas a R$ 0,31 cada)
@@ -61,7 +59,7 @@ https://business.facebook.com/ads/api/preview_iframe.php?d=AQIMlXzK4Hm64TMlbNTZH
 
 💡 Comentários:
 
-Investimos R$ 367,13 esta semana e geramos 30 contatos no WhatsApp do delivery, com custo médio de R$ 2,93 cada. O que mais chamou atenção foi o conteúdo com a equipe e com humor: os criativos "Nota de repúdio" e "Quando tentam me derrubar" trouxeram visitas ao perfil até 6 vezes mais baratas que o vídeo institucional, então a ideia é seguir produzindo nessa linha e aproveitar esse formato também nas ofertas da Black Friday.
+Investimos R$ 367,13 esta semana e geramos 30 contatos no WhatsApp do delivery, com custo médio de R$ 2,93 cada. O que mais chamou atenção foi o conteúdo com a equipe e com humor: o vídeo "Quando tentam me derrubar" trouxe visitas ao perfil 6 vezes mais baratas que o vídeo institucional, então a ideia é seguir produzindo nessa linha e aproveitar esse formato também nas ofertas da Black Friday.
 
 Vamos continuar monitorando a qualidade e ajustando as campanhas para melhorar a performance, sempre com o objetivo de escalar os resultados.
 
