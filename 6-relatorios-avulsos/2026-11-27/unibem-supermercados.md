@@ -4,6 +4,7 @@ Conta: Unibem supermercados (1140209907673111), **fora da tabela do CLAUDE.md** 
 
 > **VERIFICAR ANTES DE ENVIAR:**
 > 1. **Estrutura nova.** Na semana anterior só rodou a campanha [TRÁFEGO] [PERFIL IG - INSTITUCIONAL + APP + AÇÕES DA SEMANA] (R$ 57,12). As campanhas de WhatsApp, Seguidores, Alcance Coruripe e App começaram na semana atual. Por isso **as variações foram omitidas** (comparar R$ 367 com R$ 57 daria +543% sem significado).
+> 3. **Links das prévias:** são temporários (expiram em horas ou dias) e vieram do Meta com `&amp;t=` no meio — reproduzidos como vieram. Se não abrirem no WhatsApp, troque `&amp;` por `&`. Mande o relatório hoje.
 > 2. **Custo por lead:** a mensagem usa o custo da campanha de WhatsApp (R$ 87,85 ÷ 30 = **R$ 2,93**). Pela regra da rotina (verba total ÷ contatos) daria **R$ 12,24**, porque 76% da verba está em campanhas que não geram conversa (alcance, perfil, app). Troque se preferir a regra literal.
 
 ## MENSAGEM PARA O WHATSAPP DO CLIENTE (copiar e colar)
@@ -26,9 +27,41 @@ Pessoal, estou enviando aqui o relatório dos últimos 7 dias de campanhas (20/1
 * *Média de contatos por dia:* 4,29
 * *Custo por lead (campanha de WhatsApp):* R$ 2,93
 
+---
+
+*Como foi cada campanha e os criativos que mais se destacaram:*
+
+*1. WhatsApp do delivery* (R$ 87,85 investidos, 30 conversas a R$ 2,93 cada)
+O carrossel *"Nova missão desbloqueada"* foi o grande destaque: sozinho trouxe 20 das 30 conversas, a R$ 3,17 cada.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQJJbp8618zSiamTrodI1ypsb86XvMnG4q_KZRaSccmjCF-sXXAfwty70HmG8La6V8_5VIHQ7rA_TEdu6K4Kz9kObiBVl_Dy4R9saCMg6vZ7GICswE4iimrGHC-sux3SmGxE5pDImyZ130a6Z3xPpFF2zKu5dFJtTuVTQW97lO2K2I2wgk-HyvM1eVnfTfCv_QG0tx9CF72FyKasyNGVLZkP3wh5VvgW32_A7XYWb1YkCg&amp;t=AQLAybPE7hBcQh2ZNyg
+Entre os vídeos de Black Friday que subiram no dia 25, o *"Com quantos anos você descobriu"* já começou bem: 3 conversas a R$ 1,94 cada, mesmo com pouca verba.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQI04xcDfzZQ1sjAEir01jqmqfR3SK30OB8A59AvUt3NOqJQWRa8dcgvu4WgZxC8OB_AJB1o4NPhtOiyzKK9BbE9TC7wOpw69bF5xvN1WG6XNhesS_Cly3WpSswip_SqDDVTbyoXAY3hQB4EgGPY__ah4p3S_UxYy7QmqrqnnlwyR68mb9EOKsT3pB4o72ND5sTgomYcc4aOJCemCfNTre54-bB1ROy4TQypns58-D7Lkw&amp;t=AQKSjX_d3cqnrB9rAfw
+
+*2. Seguidores / visitas ao perfil* (R$ 66,15 investidos, 1.283 visitas a R$ 0,05 cada)
+O carrossel *"Nota de repúdio"* foi o criativo mais eficiente da conta: 848 visitas ao perfil a R$ 0,05 cada, e de cada 100 pessoas que viram, 7 clicaram.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQKYGWgzhxfPal0UsVaG3SaGMTDmfPnZGbxu9GiXp2b7Oc7ffYdmJiWSEWIZAcHLCCpZSsITUyzLrEuCIeq9C2kHVwHmCRRnIhL_1mtcby8H1W_LtroksPaul5k72E132e4-iedDNTSI9cS4-H1oBeOAxb60nXqByx12y6FXpXgEFMh-FDnlTpj3iu79t-eoVPVH6vsWWiKv4ILhj24WQSGKluoH6ZwlKoG8zHGOvW-pWA&amp;t=AQIyg6_LzVaTzrZ4dc8
+O vídeo *"Quando tentam me derrubar"* veio logo atrás, com 278 visitas a R$ 0,06 cada.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQIBA8RGza3rq4JIX9ZyuPXLbLEt9ELoLiNySpDBGIxlcs1RvwXp4Zzc_q94Q2nuDWmRV0LuyqE2LXgkRhi_GNBtIanTPwZagCTVLuLr9cY4nYQmHCzMZodLLj16QbuKi_Wy_sAJ4NvFDFBWn9owcuH96YUz2wGPrPhPQE4boGilEmV9MmIgZvce8ohkq3OuHvvKs_A5XOR6H8Aw0sVa9QUUP0wTfOKEwRFEu3b4xuaGyw&amp;t=AQIdXA8Mlw9Dtohdq8E
+
+*3. Perfil institucional + ofertas da semana* (R$ 142,04 investidos, 459 visitas a R$ 0,31 cada)
+O vídeo *"Ofertas semanais 02"* (dia do açougue) trouxe 160 visitas a R$ 0,32 cada.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQIaDguqWNZGHYBvSjSc6rqvJgizyUvW3bP18rUXbOLr-fBfgGk8YaLyU1CwfuOFm7tMHrrjOEhwqYmUA4XQUQA13wsNG3rGWyLWpnvtFgAggxMJLB4oX4shaEF_zks6wrNu0NOcixR6ks72hoveDMlA9PQf5tPEEv5kTpiOYfWRbcFvA-BWZDh0XzA2r_iCaw0EnLv_9T1J3bGGFVvS2mGt8kUNyhlP3HEhThAwmsNQaw&amp;t=AQK6XEiN2bA4jxyuQKs
+O vídeo *"Unibem institucional"* (fachada da loja) trouxe 134 visitas a R$ 0,38 cada.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQJRmnMOFbbBCYFkQywmumAkQKG0F0AB4urBvShDU6ncAJhMhe3eMJeUv8u210Zgki9To3xTIMkIp44FxbDrBawroDP6NbrpZLxCBITL3cX1GL4DUYRFTG0dQTalRQBprcvyrBHGXfb6n21yAieayAyFFoVIrdGKwcdB9CGbxF3_ZTn3SIKUu4dzv4-2xo6tt1mw8FSSwua_la41LK70b8WsVeqDojSkeJaoEWpRihVpJw&amp;t=AQKBJR6pqA7pFqFKizo
+
+*4. Alcance em Coruripe* (R$ 41,70 investidos, 14.193 pessoas alcançadas)
+O vídeo *"Só vim comprar uma água"* levou a marca para 10.579 pessoas da cidade, a R$ 2,52 a cada mil pessoas.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQLfXyCyowP7KKzIK42MJf1cc8GR9UTw7qSNU4GtqKOovT34OAeFhfJrcW3C3npm3zQwFGYPWfhYGI9l0DnCoIStJ-04GlWqGENGvO3arSrhdtwoasRTI8H-aWi-N6e95BCsU91xUatVzVOvuL-R3UA36_0vjP1vIsBA2koNVz31pFhGXNe9pI8MzTHEL-CMc1BGeyjC83WonUW5Tj_0-qTcT1Uws5ZKFp4ExCKAP2q2FA&amp;t=AQIUcdSGcOiQaEAxGzg
+
+*5. App (Play Store)* (R$ 29,39 investidos, 98 cliques para baixar a R$ 0,30 cada)
+A arte *"Baixou, economizou"* trouxe 49 cliques para a loja do app, a R$ 0,34 cada.
+https://business.facebook.com/ads/api/preview_iframe.php?d=AQIMlXzK4Hm64TMlbNTZHXeeTfpLfJCgrEDo3bXUepMm-1jaiBWQBmFD8LblPVSk3cSqL95cb_jdFq_P1hmztZH3TtyjurK9YVlMS99LrvBQmaAkA4hXH7uWMLG7OWN3A1127hLQR-1mp6eer0o01FUOY_xTWeOu4JEMNRaXGSlcHI0ye0BpGIOMyj53nn_hObfoB-MUT3zC3ovFTZWjamIr-SILl5pbZWgbKpp_V6iLjg&amp;t=AQLJN0RD89aHYxaki2A
+
+---
+
 💡 Comentários:
 
-Investimos R$ 367,13 esta semana e geramos 30 contatos no WhatsApp do delivery, com custo médio de R$ 2,93 cada. Além disso, o perfil do Instagram recebeu 1.742 visitas, os anúncios alcançaram 14.193 pessoas em Coruripe e 98 pessoas clicaram para baixar o app, tudo com um custo de R$ 4,23 a cada mil visualizações, bem baixo, o que deixa a loja bem preparada para a Black Friday.
+Investimos R$ 367,13 esta semana e geramos 30 contatos no WhatsApp do delivery, com custo médio de R$ 2,93 cada. O que mais chamou atenção foi o conteúdo com a equipe e com humor: os criativos "Nota de repúdio" e "Quando tentam me derrubar" trouxeram visitas ao perfil até 6 vezes mais baratas que o vídeo institucional, então a ideia é seguir produzindo nessa linha e aproveitar esse formato também nas ofertas da Black Friday.
 
 Vamos continuar monitorando a qualidade e ajustando as campanhas para melhorar a performance, sempre com o objetivo de escalar os resultados.
 
